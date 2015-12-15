@@ -23,6 +23,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase'])
   });
 })
 
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -45,7 +46,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase'])
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+        controller: 'LogInCtrl'
       }
     }
   })
