@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
+var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -33,13 +33,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-  .state('signin', {
-    url: '/sign-in',
-    templateUrl: 'templates/sign-in.html',
-    controller: 'LogInCtrl'
-  })
-
-  .state('tab', {
+    .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
@@ -52,7 +46,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+        controller: 'LogInCtrl'
       }
     }
   })
@@ -87,6 +81,6 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/sign-in');
+  $urlRouterProvider.otherwise('/tab/dash');
 
 });
