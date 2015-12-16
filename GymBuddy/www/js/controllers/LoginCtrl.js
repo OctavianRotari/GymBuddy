@@ -1,4 +1,4 @@
-rgymBuddyApp.controller('LogInCtrl', function($scope) {
+gymBuddyApp.controller('LogInCtrl', function($scope) {
 
   $scope.name = null;
 
