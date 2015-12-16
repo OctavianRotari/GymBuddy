@@ -16,5 +16,13 @@
         </div>
       </div>
     </div>
+    <div ng-hide="name" class="card" ng-click="login()">
+      <button class="item">Log in with Facebook</button>
+    </div>
+    <div class=card ng-show="username">
+      <div class="item item-text-wrap">
+        Hello {{authData.facebook.displayName}}!
+      </div>
+    </div>
   </ion-content>
 </ion-view>
