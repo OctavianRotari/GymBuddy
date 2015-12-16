@@ -1,5 +1,20 @@
 <ion-view view-title="Signin">
   <ion-content class="padding">
+    <div class="list list-insert">
+      <label class="item item-input">
+        <input type="text" placeholder="First name" ng-model="data.firstName">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Last name" ng-model="data.lastName">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Email" ng-model="data.email">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="data.password">
+      </label>
+    </div>
+    <button class="button button-block button-calm" ng-click="signUp()">Sign up</button>
     <div ng-hide="name" class="card" ng-click="login()">
       <button class="item">Log in with Facebook</button>
     </div>
