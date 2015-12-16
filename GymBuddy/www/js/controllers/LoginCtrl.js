@@ -1,4 +1,4 @@
-gymBuddyApp.controller('LogInCtrl', function($scope) {
+gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
 
   $scope.name = null;
 
@@ -10,6 +10,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope) {
       } else {
         $scope.name = authData.facebook.displayName;
         console.log("Authenticated successfully with payload:", $scope.username);
+        $state.go('tab.dash');
       }
     });
   };
