@@ -52,7 +52,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'LogInCtrl'
+        controller: 'DashCtrl'
       }
     }
   })
