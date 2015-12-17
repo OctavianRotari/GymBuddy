@@ -55,13 +55,9 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
             $state.go('tab.dash');
           }
         console.log("Authenticated successfully with payload:", authData.facebook);
-<<<<<<< HEAD
         $state.go('tab.profile');
-=======
-        $state.go('tab.dash');
-        });
->>>>>>> master
-      }
-    });
+      });
+    }
+  });
   };
 });
