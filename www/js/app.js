@@ -33,7 +33,6 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     templateUrl: 'templates/sign-in.html',
     controller: 'LogInCtrl'
   })
-
   .state('tab', {
     url: '/tab',
     abstract: true,
@@ -47,6 +46,15 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     views: {
       'tab-profile': {
         templateUrl: 'templates/tab-profile.html',
+        controller: 'ProfileCtrl'
+      }
+    }
+  })
+  .state('tab.home', {
+    url: '/home',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/home.html',
         controller: 'ProfileCtrl'
       }
     }
