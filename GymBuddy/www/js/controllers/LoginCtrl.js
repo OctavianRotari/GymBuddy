@@ -28,7 +28,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
           email:  $scope.data.email,
         });
         console.log("Successfully created user account with uid", userData.uid);
-        $state.go('tab.dash');
+        $state.go('tab.profile');
       }
     })
   };
@@ -52,7 +52,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
                     image: authData.facebook.profileImageURL
                   });
           } else {
-            $state.go('tab.dash');
+            $state.go('tab.profile');
           }
         console.log("Authenticated successfully with payload:", authData.facebook);
         $state.go('tab.profile');
