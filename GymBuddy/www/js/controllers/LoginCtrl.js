@@ -3,6 +3,20 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
   var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
   var check = 0;
 
+  $scope.logIn = function(){
+    ref.authWithPassword({
+      email: $scope.data.email,
+      password: $scope.data.password
+    }, function(err, authData){
+      if (err) {
+        console.log("Login Failed", err);
+      } else {
+        console.log("Authentication successfully payload", authData);
+        $state.go('tab.dash');
+      }
+    })
+  };
+
   $scope.signUp = function(){
     ref.createUser({
         email:  $scope.data.email,
