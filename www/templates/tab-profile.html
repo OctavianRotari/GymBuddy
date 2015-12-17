@@ -3,43 +3,19 @@
       <button class="button" ng-click="signOut()">
         Log Out
       </button>
-   </ion-nav-buttons>
-  <ion-content class="has-header padding">
-    <h1>Profile</h1>
+  </ion-nav-buttons>
+  <ion-content class="has-header padding" ng-init="getData()">
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="{{data.firstName}}">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="{{data.lastName}}">
+      </label>
+      <label class="item item-input">
+        <textarea placeholder="Comments"></textarea>
+      </label>
+    </div>
+  <button class="button" ng-click="profileData.getData(data)">hello</button>
   </ion-content>
 </ion-view>
-
-
-<div class="list card">
-  <a href="#" class="item item-icon-left">
-    <i></i>
-    Name
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i></i>
-    Enter phone number
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i></i>
-    Exercise Preferences
-      <ion-list>
-        <ion-checkbox ng-model="filter.blue">Abs</ion-checkbox>
-        <ion-checkbox ng-model="filter.yellow">Arms</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Back</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Butt & Hips</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Chest</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Full-Body</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Upper Leg</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Lower Leg</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Shoulder</ion-checkbox>
-      </ion-list>
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i class></i>
-    A bit about yourself
-  </a>
-
-</div>
