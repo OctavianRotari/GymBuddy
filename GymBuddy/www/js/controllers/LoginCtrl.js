@@ -12,7 +12,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
         console.log("Login Failed", err);
       } else {
         console.log("Authentication successfully payload", authData);
-        $state.go('tab.dash');
+        $state.go('tab.profile');
       }
     })
   };
