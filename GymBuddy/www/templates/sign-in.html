@@ -2,21 +2,26 @@
   <ion-content class="padding">
     <div class="list list-insert">
       <label class="item item-input">
-        <input type="text" placeholder="First name" ng-model="data.firstName">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Last name" ng-model="data.lastName">
-      </label>
-      <label class="item item-input">
         <input type="text" placeholder="Email" ng-model="data.email">
       </label>
       <label class="item item-input">
         <input type="password" placeholder="Password" ng-model="data.password">
       </label>
-    </div>
-    <button class="button button-block button-calm" ng-click="signUp()">Sign up</button>
-    <div ng-hide="name" class="card" ng-click="login()">
-      <button class="item">Log in with Facebook</button>
+      <div ng-hide="showme">
+        <button class="button button-block button-calm" ng-click="logIn()">Log in</button>
+        <button class="button button-block button-calm" ng-click="login()">Log in with Facebook</button>
+        <button class="button button-block button-calm" ng-click="showme=true">Sign up</button>
+      </div>
+      <div ng-show="showme">
+        <label class="item item-input">
+          <input type="text" placeholder="First name" ng-model="data.firstName">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Last name" ng-model="data.lastName">
+        </label>
+        <button class="button button-block button-calm" ng-click="signUp()">Sign up</button>
+        <button on-swipe-up="showme=false" class="button">Test</button>
+      </div>
     </div>
   </ion-content>
 </ion-view>
