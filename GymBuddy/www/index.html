@@ -17,6 +17,7 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <!-- <script src="plugins/cordova-plugin-statusbar/www/statusbar.js"></script> -->
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers/LoginCtrl.js"></script>
@@ -26,13 +27,18 @@
     <script src="js/controllers/chatsCtrl.js"></script>
     <script src="js/controllers/accountCtrl.js"></script>
     <script src="js/services/services.js"></script>
+
   </head>
   <body>
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
 
+
     <ion-nav-bar class="bar-stable">
+      <!-- <div class="bar bar-header">
+      <button class="button">Sign out</button>
+    </div> -->
       <ion-nav-back-button>
       </ion-nav-back-button>
     </ion-nav-bar>
