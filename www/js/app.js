@@ -55,7 +55,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     views: {
       'tab-home': {
         templateUrl: 'templates/home.html',
-        controller: 'ProfileCtrl'
+        controller: 'homeCtrl'
       }
     }
   })
