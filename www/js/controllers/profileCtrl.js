@@ -11,6 +11,8 @@ gymBuddyApp.controller('ProfileCtrl',['$scope', '$state', 'profileData', functio
     });
   };
 
+  getData();
+
   $scope.editProfile = function(){
     ref.update({
       username: $scope.data.username,
