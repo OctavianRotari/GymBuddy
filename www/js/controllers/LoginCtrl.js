@@ -63,7 +63,8 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
                     firstName: authData.facebook.cachedUserProfile.first_name,
                     lastName: authData.facebook.cachedUserProfile.last_name,
                     gender: authData.facebook.cachedUserProfile.gender,
-                    image: authData.facebook.profileImageURL
+                    image: authData.facebook.profileImageURL,
+                    age: authData.facebook.cachedUserProfile.age_range.min
                   });
           } else {
             $state.go('tab.profile');

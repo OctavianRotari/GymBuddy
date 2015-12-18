@@ -4,18 +4,49 @@
         Log Out
       </button>
   </ion-nav-buttons>
-  <ion-content class="has-header padding" ng-init="getData()">
-    <div class="list">
+  <ion-content class="has-header padding">
+    <div class="list" ng-hide="showme">
+      <a class="item item-avatar" href="#">
+        <img src="{{data.image}}">
+      </a>
       <label class="item item-input">
-        <input type="text" placeholder="{{data.firstName}}">
+        <h2>Username: {{data.username}}</h2>
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="{{data.lastName}}">
+        <h2>Name: {{data.firstName}}</h2>
       </label>
       <label class="item item-input">
-        <textarea placeholder="Comments"></textarea>
+        <h2>Last name: {{data.lastName}}</h2>
       </label>
+      <label class="item item-input">
+        <h2>Age: {{data.age}}</h2>
+      </label>
+      <label class="item item-input">
+        <h2>Type of training: {{data.training}}</h2>
+      </label>
+      <label class="item item-input">
+        <h2>Gym: {{data.gym}}</h2>
+      </label>
+      <button class="button" ng-click="getData()">Get data</button>
+      <button class="button"  ng-click="showme=true">Edit profile</button>
     </div>
-  <button class="button" ng-click="profileData.getData(data)">hello</button>
+    <div class="list" ng-show="showme">
+      <a class="item item-avatar" href="#">
+        <img src="{{data.image}}">
+      </a>
+      <label class="item item-input">
+        <input type="text" placeholder="username" value="{{data.username}}" ng-model="data.username">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="First name" value="{{data.firstName}}" ng-model="data.firstName">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Last name" value="{{data.lastName}}" ng-model="data.lastName">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="gym" value="{{data.gym}}" ng-model="data.gym">
+      </label>
+      <button class="button" ng-click="editProfile();showme=false">Edit profile</button>
+    </div>
   </ion-content>
 </ion-view>
