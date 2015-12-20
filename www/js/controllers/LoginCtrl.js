@@ -37,7 +37,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
         }
       } else {
         ref.push({
-          uid: userData.uid,
+          id: ":"+userData.uid,
           firstName: $scope.data.firstName,
           lastName:  $scope.data.lastName,
           email:  $scope.data.email,
@@ -55,7 +55,6 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
       } else {
         ref.once('value',function(allSnapshots){
           allSnapshots.forEach(function(snapshot){
-            console.log(authData.uid);
             if(authData.facebook.id === snapshot.child('id').val()) check++ ;
           });
           if(check === 0){

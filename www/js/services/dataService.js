@@ -11,6 +11,7 @@ gymBuddyApp.service('profileData', ["$q", function($q){
         for(var snapshotKey in snapshots) {
           if (snapshots.hasOwnProperty(snapshotKey)) {
             var snapshot = snapshots[snapshotKey];
+            debugger;
             if(snapshot['id'] === user){
               var currentUser = snapshots[snapshotKey];
               currentUser.firebaseId = snapshotKey;
