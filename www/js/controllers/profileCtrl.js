@@ -1,8 +1,24 @@
-gymBuddyApp.controller('ProfileCtrl', function($scope, $state) {
-  var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+gymBuddyApp.controller('ProfileCtrl',['$scope', '$state', 'profileData', function($scope, $state, profileData){
+
+  var getData = function(){
+    profileData.getData().then(function(thing) {
+      $scope.data = thing
+    });
+  };
+
+  getData();
+
+  $scope.editProfile = function(){
+    var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users/"+$scope.data.firebaseId);
+    ref.update({
+      username: $scope.data.username,
+      typeOfTraining: $scope.data.typeOfTraining,
+      gym: $scope.data.gym
+    });
+  }
 
   $scope.signOut = function() {
     ref.unauth();
     $state.go('sign-in');
   };
-})
+}])
