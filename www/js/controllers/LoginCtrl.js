@@ -23,7 +23,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
         password:  $scope.data.password,
     },
 
-    function(error, userData){
+    function(error, authData){
       if(error){
         switch(error.code){
           case "EMAIL_TAKEN":
@@ -37,12 +37,12 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
         }
       } else {
         ref.push({
-          id: userData.uid,
+          id: authData.uid,
           firstName: $scope.data.firstName,
           lastName:  $scope.data.lastName,
           email:  $scope.data.email,
         });
-        console.log("Successfully created user account with uid", userData.uid);
+        console.log("Successfully created user account with uid", authData.uid);
         $state.go('tab.profile');
       }
     })

@@ -10,7 +10,6 @@ gymBuddyApp.controller('ProfileCtrl',['$scope', '$state', 'profileData', functio
 
   getData();
 
-
   $scope.editProfile = function(){
     var refUser = new Firebase("https//luminous-torch-8195.firebaseio.com/users/" + $scope.data.firebaseId);
     refUser.update({
