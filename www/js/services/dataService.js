@@ -4,6 +4,7 @@ gymBuddyApp.service('profileData', ["$q", function($q){
   var user = (ref.getAuth().uid).split(":").pop();
 
   this.getData = function(){
+    console.log(user);
     var currentUser;
     return $q(function(resolve, reject) {
       ref.once('value', function(allSnapshots) {

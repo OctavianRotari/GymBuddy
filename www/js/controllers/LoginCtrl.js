@@ -37,7 +37,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
         }
       } else {
         ref.push({
-          id: ":"+userData.uid,
+          id: userData.uid,
           firstName: $scope.data.firstName,
           lastName:  $scope.data.lastName,
           email:  $scope.data.email,
