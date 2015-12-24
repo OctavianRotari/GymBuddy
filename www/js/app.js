@@ -37,6 +37,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
+    // controller: 'tabsCtrl'
   })
 
   // Each tab has its own nav history stack:
