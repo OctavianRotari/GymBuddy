@@ -23,7 +23,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
         password:  $scope.data.password,
     },
 
-    function(error, userData){
+    function(error, authData){
       if(error){
         switch(error.code){
           case "EMAIL_TAKEN":
@@ -37,11 +37,13 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
         }
       } else {
         ref.push({
+          id: authData.uid,
           firstName: $scope.data.firstName,
           lastName:  $scope.data.lastName,
           email:  $scope.data.email,
         });
         // console.log("Successfully created user account with uid", userData.uid);
+
         $state.go('tab.profile');
       }
     })
@@ -54,7 +56,6 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
       } else {
         ref.once('value',function(allSnapshots){
           allSnapshots.forEach(function(snapshot){
-            console.log(authData.uid);
             if(authData.facebook.id === snapshot.child('id').val()) check++ ;
           });
           if(check === 0){
@@ -63,7 +64,8 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
                     firstName: authData.facebook.cachedUserProfile.first_name,
                     lastName: authData.facebook.cachedUserProfile.last_name,
                     gender: authData.facebook.cachedUserProfile.gender,
-                    image: authData.facebook.profileImageURL
+                    image: authData.facebook.profileImageURL,
+                    age: authData.facebook.cachedUserProfile.age_range.min
                   });
                   $state.go('tab.profile');
           } else {

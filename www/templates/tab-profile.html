@@ -3,43 +3,54 @@
       <button class="button" ng-click="signOut()">
         Log Out
       </button>
-   </ion-nav-buttons>
+  </ion-nav-buttons>
   <ion-content class="has-header padding">
-    <h1>Profile</h1>
+    <div class="list" ng-hide="showme">
+      <a class="item item-avatar" href="#">
+        <img src="{{data.image}}">
+      </a>
+      <label class="item item-input">
+        <h2>Username: {{data.username}}</h2>
+      </label>
+      <label class="item item-input">
+        <h2>Name: {{data.firstName}}</h2>
+      </label>
+      <label class="item item-input">
+        <h2>Last name: {{data.lastName}}</h2>
+      </label>
+      <label class="item item-input">
+        <h2>Age: {{data.age}}</h2>
+      </label>
+      <label class="item item-input">
+        <h2>Type of training: {{data.typeOfTraining}}</h2>
+      </label>
+      <label class="item item-input">
+        <h2>Gym: {{data.gym}}</h2>
+      </label>
+      <button class="button" ng-click="getData()">Get data</button>
+      <button class="button"  ng-click="showme=true">Edit profile</button>
+    </div>
+    <div class="list" ng-show="showme">
+      <a class="item item-avatar" href="#">
+        <img src="{{data.image}}">
+      </a>
+      <label class="item item-input">
+        <input type="text" placeholder="username" value="{{data.username}}" ng-model="data.username">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="First name" value="{{data.firstName}}" ng-model="data.firstName">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Last name" value="{{data.lastName}}" ng-model="data.lastName">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Type of traning" value="{{data.TypeOfTrainig}}" ng-model="data.typeOfTraining">
+      </label>
+
+      <label class="item item-input">
+        <input type="text" placeholder="gym" value="{{data.gym}}" ng-model="data.gym">
+      </label>
+      <button class="button" ng-click="editProfile();showme=false">Edit profile</button>
+    </div>
   </ion-content>
 </ion-view>
-
-
-<div class="list card">
-  <a href="#" class="item item-icon-left">
-    <i></i>
-    Name
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i></i>
-    Enter phone number
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i></i>
-    Exercise Preferences
-      <ion-list>
-        <ion-checkbox ng-model="filter.blue">Abs</ion-checkbox>
-        <ion-checkbox ng-model="filter.yellow">Arms</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Back</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Butt & Hips</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Chest</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Full-Body</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Upper Leg</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Lower Leg</ion-checkbox>
-        <ion-checkbox ng-model="filter.pink">Shoulder</ion-checkbox>
-      </ion-list>
-  </a>
-
-  <a href="#" class="item item-icon-left">
-    <i class></i>
-    A bit about yourself
-  </a>
-
-</div>
