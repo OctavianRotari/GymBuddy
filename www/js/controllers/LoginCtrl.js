@@ -12,7 +12,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
         console.log("Login Failed", err);
       } else {
         console.log("Authentication successfully payload", authData);
-        $state.go('tab.profile');
+        $state.go('tab.home');
       }
     })
   };
@@ -42,7 +42,8 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
           lastName:  $scope.data.lastName,
           email:  $scope.data.email,
         });
-        console.log("Successfully created user account with uid", authData.uid);
+        // console.log("Successfully created user account with uid", userData.uid);
+
         $state.go('tab.profile');
       }
     })
@@ -66,11 +67,11 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
                     image: authData.facebook.profileImageURL,
                     age: authData.facebook.cachedUserProfile.age_range.min
                   });
+                  $state.go('tab.profile');
           } else {
-            $state.go('tab.profile');
+            // console.log("Authenticated successfully with payload:", authData.facebook);
+            $state.go('tab.home');
           }
-        console.log("Authenticated successfully with payload:", authData.facebook);
-        $state.go('tab.profile');
       });
     }
   });

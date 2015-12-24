@@ -1,4 +1,3 @@
-gymBuddyApp.controller('chatdetailctrl', function($scope, $stateparams, chats) {
-  $scope.chat = chats.get($stateparams.chatid);
+gymBuddyApp.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+  $scope.chat = Chats.get($stateParams.chatId);
 })
-

@@ -33,11 +33,11 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     templateUrl: 'templates/sign-in.html',
     controller: 'LogInCtrl'
   })
-
   .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
+    // controller: 'tabsCtrl'
   })
 
   // Each tab has its own nav history stack:
@@ -48,6 +48,15 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
       'tab-profile': {
         templateUrl: 'templates/tab-profile.html',
         controller: 'ProfileCtrl',
+      }
+    }
+  })
+  .state('tab.home', {
+    url: '/home',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/home.html',
+        controller: 'homeCtrl'
       }
     }
   })

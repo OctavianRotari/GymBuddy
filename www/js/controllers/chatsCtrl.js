@@ -12,4 +12,3 @@ gymBuddyApp.controller('ChatsCtrl', function($scope, Chats) {
     Chats.remove(chat);
   };
 })
-
