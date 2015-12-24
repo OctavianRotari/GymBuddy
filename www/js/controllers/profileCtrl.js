@@ -20,6 +20,7 @@ gymBuddyApp.controller('ProfileCtrl',['$scope', '$state', 'profileData', functio
   }
 
   $scope.signOut = function() {
+    $scope.data = undefined
     ref.unauth();
     $state.go('sign-in');
   };
