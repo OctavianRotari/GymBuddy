@@ -69,7 +69,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
                   });
                   $state.go('tab.profile');
           } else {
-            // console.log("Authenticated successfully with payload:", authData.facebook);
+            console.log("Authenticated successfully with payload:", authData.facebook);
             $state.go('tab.home');
           }
       });
