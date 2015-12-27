@@ -1,11 +1,9 @@
-// Ionic Starter App
-
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
+var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', 'ionic.ion.showWhen'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,6 +20,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     }
   });
 })
+
 
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -55,8 +54,17 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     url: '/home',
     views: {
       'tab-home': {
-        templateUrl: 'templates/home.html',
+        templateUrl: 'templates/tab-home.html',
         controller: 'homeCtrl'
+      }
+    }
+  })
+  .state('tab.buddy-detail', {
+    url: '/buddy/:buddyId',
+    views: {
+      'tab-buddy': {
+        templateUrl: 'templates/buddy-detail.html',
+        controller: 'buddyDetailCtrl'
       }
     }
   })
