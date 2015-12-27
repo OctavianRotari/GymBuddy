@@ -3,6 +3,7 @@
 www/lib/angular
 www/lib/angular-animate
 www/lib/angular-ui-router
+www/lib/angular-sanitize
 www/lib/ionic
 npm-debug.log
 resources/
