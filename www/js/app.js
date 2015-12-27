@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
+var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', 'ionic.ion.showWhen'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,6 +22,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     }
   });
 })
+
 
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -54,7 +55,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
     url: '/home',
     views: {
       'tab-home': {
-        templateUrl: 'templates/home.html',
+        templateUrl: 'templates/tab-home.html',
         controller: 'homeCtrl'
       }
     }

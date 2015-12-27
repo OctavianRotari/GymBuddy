@@ -1,44 +1,32 @@
-gymBuddyApp.factory('Chats', 'BuddyList', function() {
+gymBuddyApp.factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var BuddyList = [{
-    id: 0,
-    firstName: 'Ben Sparrow',
-    bio: 'You on your way?',
-    profileImageURL: 'img/ben.png'
-  }, {
-    id: 4,
-    firstName: 'Mike Harrington',
-    bio: 'This is wicked good ice cream.',
-    profileImageURL: 'img/mike.png'
-  }];
 
-  
   var chats = [{
     id: 0,
     name: 'Ben Sparrow',
-    lastText: 'You on your way?',
+    lastText: 'Where u at bruv?????',
     face: 'img/ben.png'
   }, {
     id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
+    name: 'Mario',
+    lastText: 'Hey, it\'s a meee maaario',
     face: 'img/max.png'
   }, {
     id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
+    name: 'MangoMan',
+    lastText: 'Chattin shit bout ma mangos?',
     face: 'img/adam.jpg'
   }, {
     id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
+    name: 'Don Perino',
+    lastText: 'PENTAKILL!',
     face: 'img/perry.png'
   }, {
     id: 4,
     name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
+    lastText: 'my neck is wide, like a potato.',
     face: 'img/mike.png'
   }];
 
