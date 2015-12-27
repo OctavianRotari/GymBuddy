@@ -13,8 +13,6 @@ gymBuddyApp.controller('homeCtrl', ["$scope",
 // stacking skilllz
 //...lol
 
-// $scope.showList = $location.path() === '/home';
-
 $scope.buddy = BuddyList.all();
 
 var getData = function(){
