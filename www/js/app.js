@@ -59,6 +59,15 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
       }
     }
   })
+  .state('tab.buddy-detail', {
+    url: '/buddy/:buddyId',
+    views: {
+      'tab-buddy': {
+        templateUrl: 'templates/buddy-detail.html',
+        controller: 'buddyDetailCtrl'
+      }
+    }
+  })
 
   .state('tab.chats', {
       url: '/chats',

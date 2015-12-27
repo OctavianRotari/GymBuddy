@@ -1,7 +1,20 @@
-gymBuddyApp.factory('Chats', function() {
+gymBuddyApp.factory('Chats', 'BuddyList', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
+  var BuddyList = [{
+    id: 0,
+    firstName: 'Ben Sparrow',
+    bio: 'You on your way?',
+    profileImageURL: 'img/ben.png'
+  }, {
+    id: 4,
+    firstName: 'Mike Harrington',
+    bio: 'This is wicked good ice cream.',
+    profileImageURL: 'img/mike.png'
+  }];
+
+  
   var chats = [{
     id: 0,
     name: 'Ben Sparrow',

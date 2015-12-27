@@ -2,12 +2,16 @@ gymBuddyApp.controller('homeCtrl', ["$scope",
                                     "$state",
                                     "$firebaseObject",
                                     "profileData",
+                                    "BuddyList",
                                     function($scope,
                                              $state,
                                              $firebaseObject,
-                                             profileData) {
+                                             profileData,
+                                             BuddyList) {
 // stacking skilllz
 //...lol
+
+  $scope.buddy = BuddyList.all();
 
 var getData = function(){
   profileData.getData().then(function(thing) {
