@@ -51,11 +51,12 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', ])
       }
     }
   })
+
   .state('tab.home', {
     url: '/home',
     views: {
       'tab-home': {
-        templateUrl: 'templates/home.html',
+        templateUrl: 'templates/tab-home.html',
         controller: 'homeCtrl'
       }
     }
