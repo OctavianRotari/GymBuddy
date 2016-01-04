@@ -42,7 +42,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
           lastName:  $scope.data.lastName,
           email:  $scope.data.email,
         });
-        // console.log("Successfully created user account with uid", userData.uid);
+        console.log("Successfully created user account with uid", authData.uid);
 
         $state.go('tab.profile');
       }
