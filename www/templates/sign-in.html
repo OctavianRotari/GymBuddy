@@ -1,5 +1,5 @@
-<ion-view view-title="Signin">
-  <ion-content class="padding">
+<ion-view view-title="Signin" hide-nav-bar="true">
+  <ion-content class="padding" id="sign-in-bg" >
     <div class="list list-insert">
       <label class="item item-input">
         <input type="text" placeholder="Email" ng-model="data.email">
@@ -9,8 +9,10 @@
       </label>
       <div ng-hide="showme">
         <button class="button button-block button-calm" ng-click="logIn()">Log in</button>
-        <button class="button button-block button-calm" ng-click="login()">Log in with Facebook</button>
-        <button class="button button-block button-calm" ng-click="showme=true">Sign up</button>
+        <button class="button button-block button-positive" style="background:#466CB0" ng-click="login()">
+           <img src="img/facebook_icon.png" style="margin:auto;float:left;width:38px;height=39px;"/> Log in with Facebook
+        </button>
+        <button class="button button-block button-outline button-calm" ng-click="showme=true">Sign up</button>
       </div>
       <div ng-show="showme">
         <label class="item item-input">
@@ -19,8 +21,10 @@
         <label class="item item-input">
           <input type="text" placeholder="Last name" ng-model="data.lastName">
         </label>
-        <button class="button button-block button-calm" ng-click="signUp()">Sign up</button>
-        <button on-swipe-up="showme=false" class="button">Test</button>
+        <button on-tap="showme=false" class="button button-block button-outline">
+          <i class="icon ion-arrow-up-b"></i>
+        </button>
+        <button class="button button-block button-outline button-calm" ng-click="signUp()">Sign up</button>
       </div>
     </div>
   </ion-content>
