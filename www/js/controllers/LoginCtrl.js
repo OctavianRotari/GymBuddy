@@ -1,79 +1,86 @@
-gymBuddyApp.controller('LogInCtrl', function($scope, $state) {
-  $scope.data = {firstName:null, lastName:null,email:null,password:null,confirmationPassword:null};
-  var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+gymBuddyApp.controller('LogInCtrl', function($scope, $state, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
+
+  var ref = new Firebase(firebaseUrl);
+  var auth = $firebaseAuth(ref);
+
   var check = 0;
 
-  $scope.logIn = function(){
-    ref.authWithPassword({
-      email: $scope.data.email,
-      password: $scope.data.password
-    }, function(err, authData){
-      if (err) {
-        console.log("Login Failed", err);
-      } else {
-        console.log("Authentication successfully payload", authData);
-        $state.go('tab.home');
-      }
-    })
-  };
+  $ionicModal.fromTemplateUrl('templates/signup.html', {
+    scope: $scope
+  }).then(function (modal) {
+    $scope.modal = modal;
+  });
 
-  $scope.signUp = function(){
-    ref.createUser({
-        email:  $scope.data.email,
-        password:  $scope.data.password,
-    },
-
-    function(error, authData){
-      if(error){
-        switch(error.code){
-          case "EMAIL_TAKEN":
-            console.log("The new user account cannot be created because the email is already in use.");
-            break;
-          case "INVALID_EMAIL":
-            console.log("The specified email is not a valid email.");
-            break;
-          default:
-            console.log("Error creating user:", error);
-        }
-      } else {
-        ref.push({
-          id: authData.uid,
-          firstName: $scope.data.firstName,
-          lastName:  $scope.data.lastName,
-          email:  $scope.data.email,
+  $scope.signIn = function (user) {
+    if (user && user.email && user.password) {
+      $ionicLoading.show({
+        template: 'Signing In...'
+      });
+      auth.$authWithPassword({
+        email: user.email,
+        password: user.password
+      }).then(function (authData) {
+        console.log("Logged in as:" + authData.uid);
+        ref.child("users").child(authData.uid).once('value', function (snapshot) {
+          var val = snapshot.val();
+          // To Update AngularJS $scope either use $apply or $timeout
+          $scope.$apply(function () {
+            $rootScope.displayName = val;
+          });
         });
-        console.log("Successfully created user account with uid", authData.uid);
+        $ionicLoading.hide();
+        $state.go('tab.home');
+      }).catch(function (error) {
+        alert("Authentication failed:" + error.message);
+        $ionicLoading.hide();
+      });
+    } else
+      alert("Please enter email and password both");
+  }
 
-        $state.go('tab.profile');
-      }
-    })
-  };
+
+  $scope.createUser = function (user) {
+    console.log("Create User Function called");
+    if (user && user.email && user.password && user.userName) {
+      $ionicLoading.show({
+        template: 'Signing Up...'
+      });
+
+      auth.$createUser({
+        email:  user.email,
+        password:  user.password,
+      }).then(function (authData) {
+        alert("User created successfully!");
+        ref.child("users").child(authData.uid).set({
+          userName: user.userName,
+          email:  user.email,
+        });
+        $ionicLoading.hide();
+        $scope.modal.hide();
+      }).catch(function (error) {
+        alert("Error: " + error);
+        $ionicLoading.hide();
+        $scope.modal.hide();
+      });
+    } else
+      alert("Please fill all details");
+  }
 
   $scope.login = function(){
     ref.authWithOAuthPopup("facebook", function(error, authData) {
       if (error) {
         console.log("Login Failed!", error);
       } else {
-        ref.once('value',function(allSnapshots){
-          allSnapshots.forEach(function(snapshot){
-            if(authData.facebook.id === snapshot.child('id').val()) check++ ;
-          });
-          if(check === 0){
-            ref.push({
-                    id: authData.facebook.id,
-                    firstName: authData.facebook.cachedUserProfile.first_name,
-                    lastName: authData.facebook.cachedUserProfile.last_name,
-                    gender: authData.facebook.cachedUserProfile.gender,
-                    image: authData.facebook.profileImageURL,
-                    age: authData.facebook.cachedUserProfile.age_range.min
-                  });
-                  $state.go('tab.profile');
-          } else {
-            // console.log("Authenticated successfully with payload:", authData.facebook);
-            $state.go('tab.home');
-          }
-      });
-    }
-  });
+        ref.child("users").child(authData.uid).set({
+          id: authData.facebook.id,
+          firstName: authData.facebook.cachedUserProfile.first_name,
+          lastName: authData.facebook.cachedUserProfile.last_name,
+          gender: authData.facebook.cachedUserProfile.gender,
+          image: authData.facebook.profileImageURL,
+          age: authData.facebook.cachedUserProfile.age_range.min
+        });
+        $state.go('tab.home');
+      }
+    });
   };
 });

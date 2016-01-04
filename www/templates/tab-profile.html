@@ -1,6 +1,6 @@
 <ion-view title="Account">
   <ion-nav-buttons side="right">
-      <button class="button" ng-click="signOut()">
+      <button class="button" ng-click="logout()">
         Log Out
       </button>
   </ion-nav-buttons>
@@ -10,13 +10,10 @@
         <img src="{{data.image}}">
       </a>
       <label class="item item-input">
-        <h2>Username: {{data.username}}</h2>
+        <h2>Username: {{data.userName}}</h2>
       </label>
       <label class="item item-input">
-        <h2>Name: {{data.firstName}}</h2>
-      </label>
-      <label class="item item-input">
-        <h2>Last name: {{data.lastName}}</h2>
+        <h2>Email: {{data.email}}</h2>
       </label>
       <label class="item item-input">
         <h2>Age: {{data.age}}</h2>
@@ -35,20 +32,16 @@
         <img src="{{data.image}}">
       </a>
       <label class="item item-input">
-        <input type="text" placeholder="username" value="{{data.username}}" ng-model="data.username">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="First name" value="{{data.firstName}}" ng-model="data.firstName">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Last name" value="{{data.lastName}}" ng-model="data.lastName">
+        <input type="text" placeholder="username" value="{{data.userName}}" ng-model="data.username">
       </label>
       <label class="item item-input">
         <input type="text" placeholder="Type of traning" value="{{data.TypeOfTrainig}}" ng-model="data.typeOfTraining">
       </label>
-
       <label class="item item-input">
         <input type="text" placeholder="gym" value="{{data.gym}}" ng-model="data.gym">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="age" value="{{data.age}}" ng-model="data.age">
       </label>
       <button class="button" ng-click="editProfile();showme=false">Done</button>
     </div>
