@@ -1,8 +1,8 @@
 gymBuddyApp.service('profileData', ["$q", function($q){
 
-  var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+  var ref = new Firebase("https//luminous-torch-8195.firebaseio.com");
 
-  var user = (ref.getAuth().uid).split(":").pop();
+  var user = ref.getAuth().uid;
 
   this.getData = function(){
     var currentUser;
@@ -10,14 +10,10 @@ gymBuddyApp.service('profileData', ["$q", function($q){
       ref.once('value', function(allSnapshots) {
         var snapshots = allSnapshots.val();
         for(var snapshotKey in snapshots) {
-          if (snapshots.hasOwnProperty(snapshotKey)) {
-            var snapshot = snapshots[snapshotKey];
-            if(snapshot['id'] === user){
-              var currentUser = snapshots[snapshotKey];
-              currentUser.firebaseId = snapshotKey;
-              console.log(currentUser);
-              resolve(currentUser);
-            }
+          if(snapshotKey === user){
+            var currentUser = snapshots[snapshotKey];
+            console.log(currentUser);
+            resolve(currentUser);
           }
         }
       })
