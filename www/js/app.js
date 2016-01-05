@@ -1,19 +1,12 @@
 
-// angular.module('starter', ['ionic', 'starter.controllers'])
-var firebaseUrl = "https://gym2.firebaseio.com/";
+var firebaseUrl = "https//luminous-torch-8195.firebaseio.com/";
 
-// document.addEventListener("deviceready", onDeviceReady, false);
+var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ionic.ion.showWhen', 'gymBuddy.services', 'gymBuddy.controllers'])
 
-var gymBuddy = angular.module('gymBuddy', ['ionic','angularMoment', 'firebase', 'gymBuddy.controllers','starter.services' ])
-
-// var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', 'ionic.ion.showWhen'])
-
-
-.run(function($ionicPlatform, $rootScope, $location, $ionicLoading) {
+.run(function($ionicPlatform, Auth, $rootScope, $ionicLoading, $location, $rootScope, $ionicHistory) {
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
+
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
 
@@ -25,35 +18,37 @@ var gymBuddy = angular.module('gymBuddy', ['ionic','angularMoment', 'firebase', 
 
     ionic.Platform.fullScreen();
 
-    // $rootScope.firebaseUrl = firebaseUrl;
-    // $rootScope.displayName = null;
-    //
-    // Auth.$onAuth(function (authData) {
-    //     if (authData) {
-    //         console.log("Logged in as:", authData.uid);
-    //     } else {
-    //         console.log("Logged out");
-    //         $ionicLoading.hide();
-    //         $location.path('/login');
-    //     }
-    // });
-    //
-    // $rootScope.logout = function () {
-    //     console.log("Logging out from the app");
-    //     $ionicLoading.show({
-    //         template: 'Logging Out...'
-    //     });
-    //     Auth.$unauth();
-    // }
-    //
-    //
-    // $rootScope.$on("$stateChangeError", function (event, toState, toParams, fromState, fromParams, error) {
-    //     // We can catch the error thrown when the $requireAuth promise is rejected
-    //     // and redirect the user back to the home page
-    //     if (error === "AUTH_REQUIRED") {
-    //         $location.path("/login");
-    //     }
-    // });
+    $rootScope.firebaseUrl = firebaseUrl;
+    $rootScope.displayName = null;
+
+    Auth.$onAuth(function (authData) {
+      if (authData) {
+        console.log("Logged in as:", authData.uid);
+        $location.path('/app/home');
+      } else {
+        console.log("Logged out");
+        $ionicLoading.hide();
+        $location.path('/sign-in');
+      }
+    });
+
+    $rootScope.logout = function () {
+
+      console.log("Logging out from the app");
+      $ionicLoading.show({
+        template: 'Logging Out...'
+      });
+      Auth.$unauth();
+    }
+
+
+    $rootScope.$on("$stateChangeError", function (event, toState, toParams, fromState, fromParams, error) {
+      // We can catch the error thrown when the $requireAuth promise is rejected
+      // and redirect the user back to the home page
+      if (error === "AUTH_REQUIRED") {
+        $location.path("/sign-in");
+      }
+    });
   });
 })
 
@@ -69,7 +64,7 @@ var gymBuddy = angular.module('gymBuddy', ['ionic','angularMoment', 'firebase', 
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    // controller: 'AppCtrl'
   })
 
   .state('app.settings', {
