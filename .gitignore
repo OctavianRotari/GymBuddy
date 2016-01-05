@@ -8,6 +8,6 @@ www/lib/ionic
 npm-debug.log
 resources/
 node_modules/
-platforms/
+
 plugins/
 *.DS_Store
