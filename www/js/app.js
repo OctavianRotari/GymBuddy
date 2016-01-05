@@ -34,6 +34,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', 'ionic.ion
     Auth.$onAuth(function (authData) {
       if (authData) {
         console.log("Logged in as:", authData.uid);
+        $location.path('/tab/home');
       } else {
         console.log("Logged out");
         $ionicLoading.hide();
