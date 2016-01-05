@@ -54,6 +54,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state, $firebaseAuth, $ion
         ref.child("users").child(authData.uid).set({
           userName: user.userName,
           email:  user.email,
+          image: null
         });
         $ionicLoading.hide();
         $scope.modal.hide();
