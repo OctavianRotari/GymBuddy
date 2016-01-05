@@ -78,7 +78,7 @@ gymBuddyApp.controller('LogInCtrl', function(Auth, $scope, $firebaseAuth, $ionic
     }).catch(function(error) {
       if (error.code === "TRANSPORT_UNAVAILABLE") {
         Auth.$authWithOAuthPopup("facebook").then(function(authData) {
-        ref.child("users").child(authData.uid).set({
+        ref.child("users").child(authData.uid).update({
           id: authData.facebook.id,
           firstName: authData.facebook.cachedUserProfile.first_name,
           lastName: authData.facebook.cachedUserProfile.last_name,
