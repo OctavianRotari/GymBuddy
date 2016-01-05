@@ -1,0 +1,39 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title"></h1>
+    <div class="buttons">
+      <button class="button button-outline button-clear" ng-click="findBuddyClose()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content id="buddy-modal">
+    <form ng-submit="doFindBuddy()">
+      <!-- <div class="list"> -->
+        <div class="list list-inset">
+          <div class="item">
+            Body
+          </div>
+          <div class="item">
+            Half body
+          </div>
+          <div class="item">
+            Other Half body
+          </div>
+
+    ...
+
+        </div>
+        <!-- <label class="item item-input">
+          <span class="input-label">Choice</span>
+          <input type="text" ng-model="buddyData.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="buddyData.password">
+        </label> -->
+        <label class="item">
+          <button class="button button-full button-dark" type="submit">GO</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
