@@ -1,6 +1,10 @@
 angular.module('gymBuddy.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $state, $cordovaGeolocation,$ionicModal, $timeout) {
+
+  $cordovaGeolocation.getCurrentPosition(options).then(function(position) {
+
+    var
 
   $scope.loginData = {};
 
