@@ -12,7 +12,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // 'starter.controllers' is found in controllers.js
 var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', 'ionic.ion.showWhen'])
 
-.run(function($ionicPlatform, Auth, $rootScope, $ionicLoading, $location, $rootScope) {
+.run(function($ionicPlatform, Auth, $rootScope, $ionicLoading, $location, $rootScope, $ionicHistory) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -42,7 +42,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', 'ionic.ion
     });
 
     $rootScope.logout = function () {
-      $rootScope.data = null;
+
       console.log("Logging out from the app");
       $ionicLoading.show({
         template: 'Logging Out...'
@@ -110,6 +110,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', 'ionic.ion
       }
     }
   })
+
   .state('tab.home', {
     url: '/home',
     views: {
@@ -119,6 +120,7 @@ var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', 'ionic.ion
       }
     }
   })
+
   .state('tab.buddy-detail', {
     url: '/buddy/:buddyId',
     views: {

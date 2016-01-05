@@ -1,13 +1,13 @@
 <ion-view title="Account">
   <ion-nav-buttons side="right">
-      <button class="button" ng-click="logout()">
+      <button class="button" ng-click="clearScope(); logout()">
         Log Out
       </button>
   </ion-nav-buttons>
   <ion-content class="has-header padding">
     <div class="list" ng-hide="showme">
       <a class="item item-avatar" href="#">
-        <img src="{{data.image}}">
+        <img src="img/default.jpg">
       </a>
       <label class="item item-input">
         <h2>Username: {{data.userName}}</h2>
@@ -29,10 +29,10 @@
     </div>
     <div class="list" ng-show="showme">
       <a class="item item-avatar" href="#">
-        <img src="{{data.image}}">
+        <img src="img/default.jpg">
       </a>
       <label class="item item-input">
-        <input type="text" placeholder="username" value="{{data.userName}}" ng-model="data.username">
+        <input type="text" placeholder="username" value="{{data.userName}}" ng-model="data.userName">
       </label>
       <label class="item item-input">
         <input type="text" placeholder="Type of traning" value="{{data.TypeOfTrainig}}" ng-model="data.typeOfTraining">
