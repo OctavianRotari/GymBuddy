@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<<<<<<< HEAD
 <widget id="com.ionicframework.gymbuddy371877" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-=======
-<widget id="com.ionicframework.gymbuddy" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
->>>>>>> 3e1ae54e3c179f38a958f4968aa18e522017d56c
+
   <name>GymBuddy</name>
   <description>
         An Ionic Framework and Cordova project.
@@ -51,8 +48,7 @@
     <splash src="resources/ios/splash/Default@2x~iphone.png" height="960" width="640"/>
     <splash src="resources/ios/splash/Default~iphone.png" height="480" width="320"/>
   </platform>
-<<<<<<< HEAD
-=======
+
   <platform name="android">
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
     <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>
@@ -73,5 +69,5 @@
     <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
     <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
   </platform>
->>>>>>> 3e1ae54e3c179f38a958f4968aa18e522017d56c
+
 </widget>
