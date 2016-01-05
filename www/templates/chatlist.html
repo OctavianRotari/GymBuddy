@@ -1,0 +1,23 @@
+<ion-view view-title="Chats">
+  <ion-content id="chat-bg">
+    <div class="item">
+        <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Filter Chats">
+      </label>
+    </div>
+    <!-- <ion-list> -->
+      <ion-item class="ghost-chat item-avatar item-icon-right" ng-repeat="chat in buddies" href="#/app/chatlist/{{chat.id}}">
+      <!-- <ion-item class="ghost-chat item-avatar item-icon-right" ng-repeat="chat in buddies" href="#/app/chatlist/{{chat.id}}"> -->
+        <img class="chat-img" ng-src="{{chat.profileImageURL}}">
+        <h2>{{chat.firstName}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-ios-arrow-forward icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    <!-- </ion-list> -->
+  </ion-content>
+</ion-view>

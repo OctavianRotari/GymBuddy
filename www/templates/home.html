@@ -1,0 +1,50 @@
+
+<ion-view view-title="Home">
+  <ion-content id="home-bg">
+    <div class="card">
+      <a class="item item-thumbnail-left" href="#/app/profile">
+        <img src="{{data.image}}">
+        <h2>Hello {{data.firstName}}!</h2>
+        <p>Some more info brah</p>
+        <p >a bit more info brah</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button class="button right ghost-button" href="#/app/profile">Edit profile</button>
+      </a>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <a class="ghost-button button-large button-block" href="#/app/chatlist">CHATS</a>
+      </div>
+      <div class="col">
+        <a class="ghost-button button-large button-block" href="#/app/buddylist">BUDDIES</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a class="ghost-button button-large button-block" href="#/app/gyms">GYMS</a>
+      </div>
+      <div class="col">
+          <a class="ghost-button button-large button-block" href="#/app/matches">MATCHES</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a ></a>
+      </div>
+    </div>
+    <div class="row padding-top">
+      <div class="col">
+        <a class="ghost-button button-large button-block" ng-click="findBuddy()">FIND A BUDDY</a>
+      </div>
+    </div>
+
+
+        </div>
+
+  </ion-content>
+</ion-view>
