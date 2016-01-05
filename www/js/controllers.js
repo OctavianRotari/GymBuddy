@@ -1,4 +1,4 @@
-angular.module('gymBuddy.controllers', [])
+angular.module('gymBuddy.controllers')
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 

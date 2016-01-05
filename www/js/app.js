@@ -1,7 +1,7 @@
 
 var firebaseUrl = "https//luminous-torch-8195.firebaseio.com/";
 
-var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ionic.ion.showWhen', 'gymBuddy.controllers', 'gymBuddy.services'])
+var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ionic.ion.showWhen', 'gymBuddy.services', 'gymBuddy.controllers'])
 
 .run(function($ionicPlatform, Auth, $rootScope, $ionicLoading, $location, $rootScope, $ionicHistory) {
   $ionicPlatform.ready(function() {
