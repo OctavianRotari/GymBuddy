@@ -1,49 +1,49 @@
-<ion-view title="Account">
-  <ion-nav-buttons side="right">
+  <ion-view title="Account">
+    <ion-nav-buttons side="right">
       <button class="button" ng-click="clearScope(); logout()">
         Log Out
       </button>
-  </ion-nav-buttons>
-  <ion-content class="has-header padding">
-    <div class="list" ng-hide="showme">
-      <a class="item item-avatar" href="#">
-        <img src="img/default.jpg">
-      </a>
-      <label class="item item-input">
-        <h2>Username: {{data.userName}}</h2>
-      </label>
-      <label class="item item-input">
-        <h2>Email: {{data.email}}</h2>
-      </label>
-      <label class="item item-input">
-        <h2>Age: {{data.age}}</h2>
-      </label>
-      <label class="item item-input">
-        <h2>Type of training: {{data.typeOfTraining}}</h2>
-      </label>
-      <label class="item item-input">
-        <h2>Gym: {{data.gym}}</h2>
-      </label>
-      <button class="button" ng-click="getData()">Get data</button>
-      <button class="button" ng-click="showme=true">Edit profile</button>
-    </div>
-    <div class="list" ng-show="showme">
-      <a class="item item-avatar" href="#">
-        <img src="img/default.jpg">
-      </a>
-      <label class="item item-input">
-        <input type="text" placeholder="username" value="{{data.userName}}" ng-model="data.userName">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Type of traning" value="{{data.TypeOfTrainig}}" ng-model="data.typeOfTraining">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="gym" value="{{data.gym}}" ng-model="data.gym">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="age" value="{{data.age}}" ng-model="data.age">
-      </label>
-      <button class="button" ng-click="editProfile();showme=false">Done</button>
-    </div>
-  </ion-content>
-</ion-view>
+    </ion-nav-buttons>
+    <ion-content class="has-header padding">
+      <div class="list" ng-hide="showme">
+        <a class="item item-avatar" href="#">
+          <img src="img/default.jpg">
+        </a>
+        <label class="item item-input">
+          <h2>Username: {{data.userName}}</h2>
+        </label>
+        <label class="item item-input">
+          <h2>Email: {{data.email}}</h2>
+        </label>
+        <label class="item item-input">
+          <h2>Age: {{data.age}}</h2>
+        </label>
+        <label class="item item-input">
+          <h2>Type of training: {{data.typeOfTraining}}</h2>
+        </label>
+        <label class="item item-input">
+          <h2>Gym: {{data.gym}}</h2>
+        </label>
+        <button class="button" ng-click="getData()">Get data</button>
+        <button class="button" ng-click="showme=true">Edit profile</button>
+      </div>
+      <div class="list" ng-show="showme">
+        <a class="item item-avatar" href="#">
+          <img src="img/default.jpg">
+        </a>
+        <label class="item item-input">
+          <input type="text" placeholder="username" value="{{data.userName}}" ng-model="data.userName">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Type of traning" value="{{data.TypeOfTrainig}}" ng-model="data.typeOfTraining">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="gym" value="{{data.gym}}" ng-model="data.gym">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="age" value="{{data.age}}" ng-model="data.age">
+        </label>
+        <button class="button" ng-click="editProfile();showme=false">Done</button>
+      </div>
+    </ion-content>
+  </ion-view>
