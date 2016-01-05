@@ -4,7 +4,7 @@ var firebaseUrl = "https://gym2.firebaseio.com/";
 
 // document.addEventListener("deviceready", onDeviceReady, false);
 
-var gymBuddy = angular.module('gymBuddy', ['ionic','angularMoment', 'firebase', 'gymBuddy.controllers','starter.services' ])
+var gymBuddy = angular.module('gymBuddy', ['ionic','angularMoment','ngCordova', 'firebase', 'gymBuddy.controllers','starter.services' ])
 
 // var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', 'ionic.ion.showWhen'])
 
