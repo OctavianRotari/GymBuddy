@@ -1,25 +1,28 @@
 <ion-view title="Profile">
   <ion-content class="has-header padding">
-    <div class="list list-inset" ng-hide="showme">
+    <div class="list list-inset">
       <a class="item item-avatar" href="#">
         <img src="{{data.image}}">
       </a>
 
       <label class="item item-input item-stacked-label">
         <span class="input-label">Username</span>
-        <input type="text" placeholder="username" value="{{data.username}}" ng-model="data.username">
+        <input type="text" placeholder="username" value="{{data.userName}}" ng-model="data.username">
       </label>
+
       <label class="item item-input item-stacked-label">
-        <span class="input-label">Name</span>
-        <input type="text" placeholder="First name" value="{{data.firstName}}" ng-model="data.firstName">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="bob@potato.com" value="{{data.email}}" >
       </label>
+
       <label class="item item-input item-stacked-label">
-        <span class="input-label">name</span>
-        <input type="text" placeholder="Last name" value="{{data.lastName}}" ng-model="data.lastName">
+        <span class="input-label">Age</span>
+        <input type="text" placeholder="9000" value="{{data.age}}" ng-model="data.age">
       </label>
+
       <label class="item item-input item-stacked-label">
         <span class="input-label">Training preference</span>
-        <input type="text" placeholder="Type of traning" value="{{data.TypeOfTrainig}}" ng-model="data.typeOfTraining">
+        <input type="text" placeholder="Type of traning" value="{{data.typeOfTraining}}" ng-model="data.typeOfTraining">
       </label>
 
       <label class="item item-input item-stacked-label">
@@ -27,10 +30,7 @@
         <input type="text" placeholder="gym" value="{{data.gym}}" ng-model="data.gym">
       </label>
 
-      <button class="button button-block" ng-click="gohome()">Done</button>
+      <button class="button button-block" ng-click="editProfile()">Done</button>
     </div>
-
-
-
   </ion-content>
 </ion-view>
