@@ -1,4 +1,5 @@
-gymBuddy.controller('homeCtrl', ["$scope",
+angular.module('gymBuddy.controllers')
+.controller('homeCtrl', ["$scope",
                                     "$state",
                                     "$firebaseObject",
                                     "profileData",

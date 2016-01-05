@@ -1,4 +1,5 @@
-gymBuddy.factory('$localstorage', ['$window', function($window) {
+angular.module('gymBuddy.services')
+.factory('$localstorage', ['$window', function($window) {
     return {
       set: function(key, value) {
         $window.localStorage[key] = value;

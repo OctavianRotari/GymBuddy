@@ -1,4 +1,5 @@
-gymBuddy.factory('buddylist', function() {
+angular.module('gymBuddy.services')
+.factory('buddylist', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data

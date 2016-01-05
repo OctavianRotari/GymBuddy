@@ -1,14 +1,5 @@
-// gymBuddy.controller('sign-inCtrl', function($scope, $state) {
-//
-//   $scope.bypass = function() {
-//     $state.go('app.home');
-//   };
-//
-//
-//
-// });
-
-gymBuddy.controller('sign-inCtrl', function(Auth, $scope, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
+angular.module('gymBuddy.controllers')
+.controller('sign-inCtrl', function(Auth, $scope, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
 
   var ref = new Firebase(firebaseUrl);
 

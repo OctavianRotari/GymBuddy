@@ -1,4 +1,5 @@
-gymBuddy.service('profileData', ["$q", function($q){
+angular.module('gymBuddy.services')
+.service('profileData', ["$q", function($q){
 
   var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
 

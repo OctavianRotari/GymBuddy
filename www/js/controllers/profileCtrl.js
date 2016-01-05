@@ -1,4 +1,5 @@
-gymBuddy.controller('profileCtrl',['$timeout', '$ionicLoading', '$ionicHistory', '$localstorage', '$scope', '$state', 'profileData', function($timeout, $ionicLoading, $ionicHistory, $localstorage, $scope, $state, profileData){
+angular.module('gymBuddy.controllers')
+.controller('profileCtrl',['$timeout', '$ionicLoading', '$ionicHistory', '$localstorage', '$scope', '$state', 'profileData', function($timeout, $ionicLoading, $ionicHistory, $localstorage, $scope, $state, profileData){
 
   var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
 
