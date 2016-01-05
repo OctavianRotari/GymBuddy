@@ -1,0 +1,16 @@
+<<ion-view view-title="Buddies">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="buddy in buddies" type="item-text-wrap" href="#/app/buddylist/{{buddy.id}}">
+        <img ng-src="{{buddy.face}}">
+        <h2>{{buddy.firstName}}</h2><h4 class="balanced">online</h4>
+        <p>{{buddy.gym}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-dark" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,106 @@
+/* Empty. Add your own CSS if you like */
+
+#sign-in-bg {
+  background-image: url(gym_bg4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item-avatar,
+.item-icon-right {
+  /*background-color: rgba(255, 255, 255, 0.4);*/
+}
+.card {
+  background-color: transparent;
+
+}
+.item {
+  outline: none;
+  /*background-color: #fff; */
+  background-color: rgba(255, 255, 255, 0.3);
+  /*border-color: #fff;*/
+  /*border-color: rgba(255, 255, 255, 0.4);*/
+  /*background: none; */
+}
+
+.item:hover,
+.item:active {
+  color: #66d8ed;
+  border-color: #66d8ed;
+  /*transition: border-color 0.1s ease-in,
+              color 0.1s ease-in;*/
+}
+
+#home-bg {
+  background-image: url(home_bg.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+#gym-title {
+  /*background: white;*/
+  opacity: 0.2;
+  color: grey;
+  width: 100%;
+  /*height: 50px;*/
+  font-size: 3.6em;
+  font-family:sans-serif;
+}
+
+.ghost-button {
+  background-color: rgba(255, 255, 255, 0.2);
+
+  /*rgba(255, 255, 255, 0.4)*/
+  /*display: inline-block;*/
+  /*width: auto;*/
+  /*padding: 8px;*/
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: border-color 1.4s ease-out,
+              color 0.2s ease-out;
+}
+.ghost-button:hover,
+.ghost-button:active {
+  background-color: rgba(250, 250, 250, 0.3);
+
+  color: #00C76A;
+  border-color: #00C76A;
+  transition: border-color 0.4s ease-in,
+              color 0.4s ease-in;
+}
+
+#login-section {
+  top:170px;
+}
+
+.button {
+  border-radius: 0;
+  opacity: 0.9;
+}
+
+.item-input {
+  opacity: 0.5;
+}
+
+#fb_img {
+  /*background-image: url(fb_logo2.png) no-repeat 5px center;*/
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+  /*padding: 1px 1px 1px 1px;*/
+  margin:auto;
+}
+
+#bg_test{
+  background:#4DCCFF;
+  opacity: 0.6;
+}
+
+#buddy-modal {
+  opacity: 0.9;
+  /*background-image: url(home_bg.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;*/
+}
