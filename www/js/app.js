@@ -10,7 +10,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var gymBuddyApp = angular.module('gymBuddyApp', ['ionic', 'firebase', 'ionic.ion.showWhen'])
+var gymBuddyApp = angular.module('gymBuddyApp', ['ionic','ngCordova' ,'firebase', 'ionic.ion.showWhen'])
 
 .run(function($ionicPlatform, Auth, $rootScope, $ionicLoading, $location, $rootScope, $ionicHistory) {
   $ionicPlatform.ready(function() {
