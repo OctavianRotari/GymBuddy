@@ -1,7 +1,6 @@
-gymBuddyApp.controller('LogInCtrl', function($scope, $state, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
+gymBuddyApp.controller('LogInCtrl', function(Auth, $scope, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
 
   var ref = new Firebase(firebaseUrl);
-  var auth = $firebaseAuth(ref);
 
   var check = 0;
 
@@ -16,7 +15,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state, $firebaseAuth, $ion
       $ionicLoading.show({
         template: 'Signing In...'
       });
-      auth.$authWithPassword({
+      Auth.$authWithPassword({
         email: user.email,
         password: user.password
       }).then(function (authData) {
@@ -29,7 +28,6 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state, $firebaseAuth, $ion
           });
         });
         $ionicLoading.hide();
-        $state.go('tab.home');
       }).catch(function (error) {
         alert("Authentication failed:" + error.message);
         $ionicLoading.hide();
@@ -46,7 +44,7 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state, $firebaseAuth, $ion
         template: 'Signing Up...'
       });
 
-      auth.$createUser({
+      Auth.$createUser({
         email:  user.email,
         password:  user.password,
       }).then(function (authData) {
@@ -65,13 +63,21 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state, $firebaseAuth, $ion
       });
     } else
       alert("Please fill all details");
-  }
+  };
 
-  $scope.login = function(){
-    ref.authWithOAuthPopup("facebook", function(error, authData) {
-      if (error) {
-        console.log("Login Failed!", error);
-      } else {
+  $scope.logInFacebook = function() {
+    Auth.$authWithOAuthPopup("facebook").then(function(authData) {
+        ref.child("users").child(authData.uid).update({
+          id: authData.facebook.id,
+          firstName: authData.facebook.cachedUserProfile.first_name,
+          lastName: authData.facebook.cachedUserProfile.last_name,
+          gender: authData.facebook.cachedUserProfile.gender,
+          image: authData.facebook.profileImageURL,
+          age: authData.facebook.cachedUserProfile.age_range.min
+        });
+    }).catch(function(error) {
+      if (error.code === "TRANSPORT_UNAVAILABLE") {
+        Auth.$authWithOAuthPopup("facebook").then(function(authData) {
         ref.child("users").child(authData.uid).set({
           id: authData.facebook.id,
           firstName: authData.facebook.cachedUserProfile.first_name,
@@ -80,7 +86,10 @@ gymBuddyApp.controller('LogInCtrl', function($scope, $state, $firebaseAuth, $ion
           image: authData.facebook.profileImageURL,
           age: authData.facebook.cachedUserProfile.age_range.min
         });
-        $state.go('tab.home');
+          console.log(authData);
+        });
+      } else {
+        console.log(error);
       }
     });
   };

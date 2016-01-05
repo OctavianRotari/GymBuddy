@@ -29,7 +29,7 @@ gymBuddyApp.controller('ProfileCtrl',['$timeout', '$ionicLoading', '$ionicHistor
     var refUser = new Firebase("https//luminous-torch-8195.firebaseio.com/users/" + user);
     refUser.update({
       age: $scope.data.age,
-      username: $scope.data.username,
+      userName: $scope.data.userName,
       typeOfTraining: $scope.data.typeOfTraining,
       gym: $scope.data.gym
     });
