@@ -28,4 +28,5 @@ angular.module('gymBuddy.controllers')
     });
     $state.go('app.home')
   };
+
 }])

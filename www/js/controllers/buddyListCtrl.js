@@ -1,8 +1,24 @@
 angular.module('gymBuddy.controllers')
-.controller('buddyListCtrl', function($scope, buddylist) {
+.controller('buddyListCtrl', function($scope, profileData, chatList) {
 
-  $scope.buddies = buddylist.all();
-  $scope.remove = function(chat) {
-    buddylist.remove(chat);
+  var getData = function(){
+    profileData.getData().then(function(thing) {
+      $scope.data = thing
+    });
   };
+
+  getData();
+
+  $scope.buddies = []
+
+  var getDataChat = function(){
+    for(var i=0 ; i< $scope.data.chats.length; i++){
+      chatList.getData($scope.data.chats[i].userUid).then(function(thing) {
+        $scope.buddies.push(thing)
+      });
+    }
+  };
+
+  getDataChat();
+
 })
