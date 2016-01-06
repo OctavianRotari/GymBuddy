@@ -14,16 +14,19 @@
   border: none
 }
 
-.modal {
+/*.modal {
   top: 40px !important;
   bottom: 0px !important;
   left: 1.3% !important;
 
-  /*vertical-align: middle !important;*/
   margin: auto;
   right: 0 !important;
   width: 90% !important;
   height: auto !important;
+}*/
+#google-map {
+  width: 350px !important;
+  margin-left: 10px;
 }
 
 
@@ -42,7 +45,7 @@
 .profile-item>h1 {
   margin-left: 10px;
   margin-top: 30px;
-  color: grey;
+  color: #E8E8E8;
 }
 .profile-item>div>p {
   display:inline-flex;
@@ -129,7 +132,6 @@ text-align:
   outline: none;
   text-decoration: none;
   font-weight: bolder;
-  font-
   transition: border-color 1.4s ease-out,
               color 0.2s ease-out;
 }

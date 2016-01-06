@@ -8,25 +8,29 @@
   <ion-content id="buddy-modal">
     <form ng-submit="doFindBuddy()">
       <!-- <div class="list"> -->
-        <div class="list list-inset">
-          <div class="item">
-            Body
-          </div>
-          <div class="item">
-            Half body
-          </div>
-          <div class="item">
-            Other Half body
-          </div>
-        </div>
+      <ion-list>
+        <ion-radio ng-model="choice" ng-value="'A'">Full Body</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'B'">Legs</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'C'">Chest</ion-radio>
+        <ion-radio ng-model="choice" ng-value="'D'">Cardio</ion-radio>
+      </ion-list>
 
-        <label class="item">
-          <button class="button button-full button-stable" ng-click="doFindBuddy()">GO</button>
+      <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Select Gym
+          </div>
+          <select>
+            <option selected>DAGYM</option>
+            <option>Some list</option>
+            <option>of repeating gyms</option>
+          </select>
         </label>
+      </div>
+      <img id="google-map" src="img/map1.png"></img>
 
-        <!-- <script id="popup-template.html" type="text/ng-template">
-          <input ng-model="data.wifi" type="text" placeholder="Password">
-        </script> -->
+      <label class="item">
+      <button class="button button-full button-stable" ng-click="doFindBuddy()">GO</button>
     </form>
   </ion-content>
 </ion-modal-view>

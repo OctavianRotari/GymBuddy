@@ -133,6 +133,15 @@ var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ion
       }
     }
   })
+  .state('app.match', {
+    url: '/matches/:matchId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/match.html',
+        controller: 'matchCtrl'
+      }
+    }
+  })
 
   .state('app.chatlist', {
     url: '/chatlist',
