@@ -12,12 +12,12 @@
 }
 .card {
   background-color: transparent;
-
+  border: 1px solid white
 }
 .item {
   outline: none;
   /*background-color: #fff; */
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(190, 190, 190, 0.6);
   /*border-color: #fff;*/
   /*border-color: rgba(255, 255, 255, 0.4);*/
   /*background: none; */
@@ -45,19 +45,26 @@
   font-size: 3.6em;
   font-family:sans-serif;
 }
+.button-large,
+.button-block {
+  background-color: rgba(255, 255, 255, 0.9);
+
+}
 
 .ghost-button {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 250, 255, 0.3);
 
   /*rgba(255, 255, 255, 0.4)*/
   /*display: inline-block;*/
-  /*width: auto;*/
-  /*padding: 8px;*/
-  color: #fff;
+  width: auto;
+  padding: 5px;
+  color: white;
   border: 1px solid #fff;
   text-align: center;
   outline: none;
   text-decoration: none;
+  font-weight: bolder;
+  font-
   transition: border-color 1.4s ease-out,
               color 0.2s ease-out;
 }
@@ -73,6 +80,14 @@
 
 #login-section {
   top:170px;
+}
+
+#profile-img {
+  background-size:contain;
+  width: 120px;
+  height: 120px;
+  border-radius: 70%;
+
 }
 
 .button {
