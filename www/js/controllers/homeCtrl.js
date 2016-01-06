@@ -9,6 +9,7 @@ angular.module('gymBuddy.controllers')
                                     "$ionicPopup",
                                     "$timeout",
                                     "$ionicLoading",
+                                    "$rootScope",
                                     function($scope,
                                              $state,
                                              $firebaseObject,
@@ -18,8 +19,8 @@ angular.module('gymBuddy.controllers')
                                              $ionicModal,
                                              $ionicPopup,
                                              $timeout,
-                                            $ionicLoading) {
-// $scope.buddy = BuddyList.all();
+                                             $ionicLoading,
+                                             $rootScope) {
 
   var getData = function(){
     profileData.getData().then(function(thing) {
@@ -44,17 +45,19 @@ angular.module('gymBuddy.controllers')
   $scope.findBuddy = function() {
     $scope.modal.show();
   };
-
-  // $ionicLoading.show({
-  //   content: 'Loading',
-  //   animation: 'fade-in',
-  //   showBackdrop: true,
-  //   maxWidth: 200,
-  //   showDelay: 0
-  // });
+  $scope.matchUser = function(){
+    var match = []
+    var people = buddylist.all();
+    people.forEach(function(bud){
+      if(bud.gym == $rootScope.data.gym){
+        match.push(bud);
+      }
+    });
+    console.log(match);
+  }
 
   $scope.doFindBuddy = function() {
-    console.log('GO BUDDY GO', $scope.buddyData);
+    $scope.matchUser();
     $state.go('app.matches')
     // $ionicLoading.show()
     $ionicLoading.show({
