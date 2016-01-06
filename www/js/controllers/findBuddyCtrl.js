@@ -1,9 +1,10 @@
 angular.module('gymBuddy.controllers')
-.controller('findBuddyCtrl',function($scope, $ionicPopup, $timeout) {
+.controller('findBuddyCtrl',function($scope, $ionicPopup,buddylist, $timeout) {
 
  // Triggered on a button click, or some other target
  $scope.showPopup = function() {
    $scope.data = {}
+ };
 
    // An elaborate, custom popup
    var myPopup = $ionicPopup.show({
@@ -34,29 +35,3 @@ angular.module('gymBuddy.controllers')
       myPopup.close(); //close the popup after 3 seconds for some reason
    }, 3000);
   };
-   // A confirm dialog
-//    $scope.showConfirm = function() {
-//      var confirmPopup = $ionicPopup.confirm({
-//        title: 'Consume Ice Cream',
-//        template: 'Are you sure you want to eat this ice cream?'
-//      });
-//      confirmPopup.then(function(res) {
-//        if(res) {
-//          console.log('You are sure');
-//        } else {
-//          console.log('You are not sure');
-//        }
-//      });
-//    };
-//
-//    // An alert dialog
-//    $scope.showAlert = function() {
-//      var alertPopup = $ionicPopup.alert({
-//        title: 'Don\'t eat that!',
-//        template: 'It might taste good'
-//      });
-//      alertPopup.then(function(res) {
-//        console.log('Thank you for not eating my delicious ice cream cone');
-//      });
-//    };
-// });

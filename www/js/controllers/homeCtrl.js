@@ -9,6 +9,7 @@ angular.module('gymBuddy.controllers')
                                     "$ionicPopup",
                                     "$timeout",
                                     "$ionicLoading",
+                                    "$rootScope",
                                     function($scope,
                                              $state,
                                              $firebaseObject,
@@ -18,16 +19,19 @@ angular.module('gymBuddy.controllers')
                                              $ionicModal,
                                              $ionicPopup,
                                              $timeout,
-                                            $ionicLoading) {
-// $scope.buddy = BuddyList.all();
+                                             $ionicLoading,
+                                             $rootScope) {
+
 
   var getData = function(){
+    var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
     profileData.getData().then(function(thing) {
       $scope.data = thing
     });
   };
 
   getData();
+
   $scope.buddy = buddylist.all();
   $scope.buddyData = {};
 
@@ -44,17 +48,19 @@ angular.module('gymBuddy.controllers')
   $scope.findBuddy = function() {
     $scope.modal.show();
   };
-
-  // $ionicLoading.show({
-  //   content: 'Loading',
-  //   animation: 'fade-in',
-  //   showBackdrop: true,
-  //   maxWidth: 200,
-  //   showDelay: 0
-  // });
+  $scope.matchUser = function(){
+    var match = []
+    var people = buddylist.all();
+    people.forEach(function(bud){
+      if(bud.gym == $rootScope.data.gym){
+        match.push(bud);
+      }
+    });
+    console.log(match);
+  }
 
   $scope.doFindBuddy = function() {
-    console.log('GO BUDDY GO', $scope.buddyData);
+    $scope.matchUser();
     $state.go('app.matches')
     // $ionicLoading.show()
     $ionicLoading.show({
@@ -70,7 +76,19 @@ angular.module('gymBuddy.controllers')
       $ionicLoading.hide();
       $scope.findBuddyClose()
     }, 1000);
-
   };
 
+
+  $scope.chats = function(){
+    var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+    var user = ref.getAuth().uid;
+    var refUser = new Firebase("https//luminous-torch-8195.firebaseio.com/users/" + user);
+    refUser.child('chats').child("0").set({
+      userUid: "facebook:139926089709406",
+    });
+    refUser.child('chats').child("1").set({
+      userUid: "facebook:10153151955407443"
+    });
+    $state.go("app.chatlist");
+  };
 }]);
