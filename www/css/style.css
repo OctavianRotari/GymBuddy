@@ -11,35 +11,77 @@
 }
 .card {
   background-color: transparent;
-  border: 1px solid white
+  border: none
 }
 
-.modal {
+/*.modal {
   top: 40px !important;
   bottom: 0px !important;
-  /*left: 14% !important;*/
+  left: 1.3% !important;
 
-  /*vertical-align: middle !important;*/
   margin: auto;
   right: 0 !important;
-  width: 80% !important;
-  height: 60% !important;
+  width: 90% !important;
+  height: auto !important;
+}*/
+#google-map {
+  width: 350px !important;
+  margin-left: 10px;
 }
 
+
+#online-status {
+  color: green;
+}
 .profile-item {
   background-color: rgba(190, 190, 190, 0.6);
+  /*border: none;*/
+}
+.profile-item>img {
+  margin-left: 10px;
+  margin-top: 17px;
 }
 
 .profile-item>h1 {
-  color: grey;
+  margin-left: 10px;
+  margin-top: 30px;
+  color: #E8E8E8;
 }
-.profile-item>p {
-  color: white;
+.profile-item>div>p {
+  display:inline-flex;
+  color: #E3E3E3;
+  font-style: italic;
   font-size: 16px;
 }
+
 .profile-item>button {
-  color: white;
-  font-size: 16px;
+position: absolute;
+top: 13px;
+margin-left:230px;
+color: grey;
+background-color: rgba(190, 190, 190, 0.6);
+padding: 10 0 10 0;
+font-size: 16px;
+font-weight: normal;
+border: none;
+}
+.profile-item>div {
+  /*white-space: nowrap;*/
+   /*display:inline-block;*/
+  float:left;
+position: absolute;
+top: 82px;
+margin-left:150px;
+width: 180px;
+text-align: right;
+height: 80px;
+color: #8C8C8C;
+background-color: rgba(190, 190, 190, 0.4);
+padding: 10 0 10 0;
+font-size: 16px;
+font-weight: normal;
+border: none;
+text-align:
 }
 
 .item {
@@ -90,7 +132,6 @@
   outline: none;
   text-decoration: none;
   font-weight: bolder;
-  font-
   transition: border-color 1.4s ease-out,
               color 0.2s ease-out;
 }
@@ -113,7 +154,6 @@
   width: 120px;
   height: 120px;
   border-radius: 70%;
-
 }
 
 .button {

@@ -1,6 +1,23 @@
-<ion-view view-title="Buddy Matches">
+<ion-view view-title="Matches">
 
   <ion-content>
-    <h1>Your matches</h1>
+    <div class="">
+      <h1>Your matches</h1>
+    </div>
+
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="match in matches" type="item-text-wrap" href="#/app/matches/{{match.id}}">
+        <!-- <a > -->
+          <img ng-src="{{match.image}}">
+          <i class="icon ion-ios-person-outline"></i>
+          <h2>{{match.firstName}}</h2><h4 class="balanced">online</h4>
+          <div class="row">
+          <p>{{match.gym}}</p>
+          <!-- <i class="icon ion-ios-arrow-left" style="margin-right:30px"></i> -->
+        </div>
+
+      </ion-item>
+
+    </ion-list>
   </ion-content>
 </ion-view>

@@ -76,8 +76,6 @@ angular.module('gymBuddy.controllers')
       $ionicLoading.hide();
       $scope.findBuddyClose()
     }, 1000);
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
   };
 
 
