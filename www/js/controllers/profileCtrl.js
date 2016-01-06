@@ -1,9 +1,8 @@
 angular.module('gymBuddy.controllers')
 .controller('profileCtrl',['$rootScope', '$timeout', '$ionicLoading', '$ionicHistory', '$localstorage', '$scope', '$state', 'profileData', function($rootScope, $timeout, $ionicLoading, $ionicHistory, $localstorage, $scope, $state, profileData){
 
-  var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
 
-  $scope.data = $rootScope.data
+  $scope.data = $rootScope.data;
 
   $scope.clearScope = function(){
     $ionicLoading.show({template:'Logging out....'});
@@ -28,4 +27,5 @@ angular.module('gymBuddy.controllers')
     });
     $state.go('app.home')
   };
+
 }])
