@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '../',
 
 
     // frameworks to use
@@ -16,15 +16,15 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       '../www/lib/angular/angular.js',
+      '../www/lib/mockfirebase/browser/mockfirebase.js',
       '../www/js/*.js',
       '../www/lib/angular-mocks/angular-mocks.js',
-      '**/*tests.js'
+      '../tests/**/*.spec.js'
     ],
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
@@ -67,6 +67,5 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
   })
 }
