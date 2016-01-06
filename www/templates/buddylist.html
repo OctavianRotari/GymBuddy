@@ -2,13 +2,20 @@
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="buddy in buddies" type="item-text-wrap" href="#/app/buddylist/{{buddy.id}}">
-        <img ng-src="{{buddy.face}}">
+        <img ng-src="{{buddy.image}}">
         <h2>{{buddy.firstName}}</h2><h4 class="balanced">online</h4>
         <p>{{buddy.gym}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+        <i class="icon ion-ios-person-outline"></i>
+        <!-- <i class="icon ion-ios-arrow-left" style="margin-right:30px"></i> -->
 
-        <ion-option-button class="button-dark" ng-click="remove(chat)">
-          Delete
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          <i class="icon ion-minus-circled"></i>
+        </ion-option-button>
+        <ion-option-button class="button-dark" ng-click="gotoChat(chat)">
+          <i class="icon ion-ios-location"></i>
+        </ion-option-button>
+        <ion-option-button class="button-balanced" ng-click="gotoChat(chat)">
+          <i class="icon ion-android-chat"></i>
         </ion-option-button>
       </ion-item>
     </ion-list>

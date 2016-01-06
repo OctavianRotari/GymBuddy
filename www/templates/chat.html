@@ -1,7 +1,11 @@
 <ion-view view-title="{{chat.name}}">
   <ion-content class="padding">
+    <a class="profile-image">
+      <img ng-src="{{buddy.image}}" style="width: 164px; height: 164px">
+    </a >
+
     <a class="card">
-      <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+      <img ng-src="{{buddy.image}}" style="width: 64px; height: 64px">
       View profile
     </a>
     <p>

@@ -9,13 +9,19 @@
     <!-- <ion-list> -->
       <ion-item class="ghost-chat item-avatar item-icon-right" ng-repeat="chat in buddies" href="#/app/chatlist/{{chat.id}}">
       <!-- <ion-item class="ghost-chat item-avatar item-icon-right" ng-repeat="chat in buddies" href="#/app/chatlist/{{chat.id}}"> -->
-        <img class="chat-img" ng-src="{{chat.profileImageURL}}">
+        <img class="chat-img" ng-src="{{chat.image}}">
         <h2>{{chat.firstName}}</h2>
         <p>{{chat.lastText}}</p>
         <i class="icon ion-ios-arrow-forward icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
+          <i class="icon ion-minus-circled"></i>
+        </ion-option-button>
+        <ion-option-button class="button-dark" ng-click="gotoChat(chat)">
+          <i class="icon ion-ios-location"></i>
+        </ion-option-button>
+        <ion-option-button class="button-balanced" ng-click="gotoChat(chat)">
+          <i class="icon ion-ios-person-outline"></i>
         </ion-option-button>
       </ion-item>
     <!-- </ion-list> -->
