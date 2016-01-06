@@ -1,6 +1,6 @@
 angular.module('gymBuddy.controllers')
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('appCtrl', function($scope, $ionicModal, $timeout) {
 
   $scope.loginData = {};
 

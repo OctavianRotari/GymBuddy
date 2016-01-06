@@ -5,19 +5,19 @@
         <!-- GYM BUDDY -->
       </a>
     </div>
-    <div class="row-center" id="login-section">
+    <div class="col" id="login-section">
     <div class="list list-insert" >
-      <label class="item item-input">
+      <label class="login-items item item-input">
         <input type="text" placeholder="Email" ng-model="user.email">
       </label>
-      <label class="item item-input">
-        <input type="password" placeholder="Password" ng-model="user.password">
+      <label class="login-items item item-input">
+        <input id="place" type="password" placeholder="Password" ng-model="user.password">
       </label>
-        <button class="button button-block button-calm" ng-click='signIn(user)'>Log in</button>
-        <button class="button button-block button-positive" style="background:#466CB0" ng-click="logInFacebook()">
+        <button class="login-button button-block" ng-click='signIn(user)'>Log in</button>
+        <button class="facebook-button button-block button-positive"  ng-click="logInFacebook()">
            <img src="img/fb_logo2.png" id="fb_img"/> Log in with Facebook
         </button>
-        <button class="button button-block button-calm" ng-click="modal.show()">Sign up</button>
+        <button class="login-button button-block" ng-click="modal.show()">Sign up</button>
     </div>
   </div>
   </ion-content>

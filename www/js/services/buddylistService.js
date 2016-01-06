@@ -18,7 +18,7 @@ angular.module('gymBuddy.services')
     age: 21,
     lastText: 'Hey, it\'s a meee maaario',
     image: 'img/max.png',
-    gym: 'somegym2'
+    gym: 'better than the last guys'
   }, {
     id: 2,
     firstName: 'MangoMan',
@@ -26,7 +26,7 @@ angular.module('gymBuddy.services')
     age: 21,
     lastText: 'Chattin shit bout ma mangos?',
     image: 'img/adam.jpg',
-    gym: 'somegym3890'
+    gym: 'DAAA GYM'
   }, {
     id: 3,
     firstName: 'Don Perino',
