@@ -63,7 +63,6 @@ angular.module('gymBuddy.controllers')
       }).catch(function (error) {
         alert("Error: " + error);
         $ionicLoading.hide();
-
         $scope.modal.hide();
       });
     } else
@@ -71,26 +70,49 @@ angular.module('gymBuddy.controllers')
   };
 
   $scope.logInFacebook = function() {
+    $ionicLoading.show({
+      template: 'Signing Up...'
+    });
     Auth.$authWithOAuthPopup("facebook").then(function(authData) {
-        ref.child("users").child(authData.uid).update({
-          id: authData.facebook.id,
-          firstName: authData.facebook.cachedUserProfile.first_name,
-          lastName: authData.facebook.cachedUserProfile.last_name,
-          gender: authData.facebook.cachedUserProfile.gender,
-          image: authData.facebook.profileImageURL,
-          age: authData.facebook.cachedUserProfile.age_range.min
-        });
+      var refUser = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+      refUser.once("value", function(snapshot){
+        var hasUser = snapshot.hasChild(authData.uid);
+        if(hasUser === false){
+          ref.child("users").child(authData.uid).set({
+            id: authData.facebook.id,
+            firstName: authData.facebook.cachedUserProfile.first_name,
+            lastName: authData.facebook.cachedUserProfile.last_name,
+            gender: authData.facebook.cachedUserProfile.gender,
+            image: authData.facebook.profileImageURL,
+            age: authData.facebook.cachedUserProfile.age_range.min,
+            userName: "",
+            typeOfTraining: "",
+            gym: ""
+          });
+        }
+      });
+      $ionicLoading.hide();
     }).catch(function(error) {
       if (error.code === "TRANSPORT_UNAVAILABLE") {
         Auth.$authWithOAuthPopup("facebook").then(function(authData) {
-        ref.child("users").child(authData.uid).update({
-          id: authData.facebook.id,
-          firstName: authData.facebook.cachedUserProfile.first_name,
-          lastName: authData.facebook.cachedUserProfile.last_name,
-          gender: authData.facebook.cachedUserProfile.gender,
-          image: authData.facebook.profileImageURL,
-          age: authData.facebook.cachedUserProfile.age_range.min
-        });
+          var refUser = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+          refUser.once("value", function(snapshot){
+            var hasUser = snapshot.hasChild(authData.uid);
+            if(hasUser === false){
+              ref.child("users").child(authData.uid).set({
+                id: authData.facebook.id,
+                firstName: authData.facebook.cachedUserProfile.first_name,
+                lastName: authData.facebook.cachedUserProfile.last_name,
+                gender: authData.facebook.cachedUserProfile.gender,
+                image: authData.facebook.profileImageURL,
+                age: authData.facebook.cachedUserProfile.age_range.min,
+                userName: "",
+                typeOfTraining: "",
+                gym: ""
+              });
+            }
+          });
+          $ionicLoading.hide();
           console.log(authData);
         });
       } else {
