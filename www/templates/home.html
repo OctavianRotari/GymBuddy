@@ -1,17 +1,13 @@
-
 <ion-view view-title="Home">
   <ion-content id="home-bg">
     <div class="card">
-      <a class="item item-thumbnail-left" href="#/app/profile">
-        <img src="{{data.image}}">
-        <h2>Hello {{data.userName || data.firstName}}!</h2>
+      <a class="item" href="#/app/profile">
+        <img id='profile-img' src="{{data.image}}">
+        <h1>Hello {{data.userName || data.firstName}}!</h1>
         <p>Some more info brah</p>
         <p >a bit more info brah</p>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
         <button class="button right ghost-button" href="#/app/profile">Edit profile</button>
       </a>
     </div>
