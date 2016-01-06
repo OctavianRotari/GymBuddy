@@ -1,15 +1,30 @@
-<ion-view view-title="{{chat.name}}">
-  <ion-content class="padding">
-    <a class="profile-image">
-      <img ng-src="{{buddy.image}}" style="width: 164px; height: 164px">
-    </a >
+<ion-view view-title="Chat with {{buddy.name}}">
 
-    <a class="card">
-      <img ng-src="{{buddy.image}}" style="width: 64px; height: 64px">
-      View profile
-    </a>
+  <ion-content class="padding">
+
+    <!-- profile section  -->
+      <p class="item-avatar item-icon-right">
+        <img ng-src="{{buddy.image}}" style="width: 84px; height: 84px;">
+      </p>
+
+    <!-- chat section  -->
     <p>
-      {{chat.lastText}}
+      you: ng-repeat chats goes here
+    </p>
+    <p>
+      mangoMan200: ng-repeat chats goes here
     </p>
   </ion-content>
+
+   <!-- this is for the footer search bar  -->
+  <div class="bar bar-footer bar-stable" style="height:60px">
+    <div class="item-input-inset" >
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Message" style="width:280px">
+      </label>
+      <button class="button button-small" ng-click="">
+        Send
+      </button>
+    </div>
+  </div>
 </ion-view>
