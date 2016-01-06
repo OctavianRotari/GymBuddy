@@ -70,52 +70,7 @@ angular.module('gymBuddy.controllers')
       $ionicLoading.hide();
       $scope.findBuddyClose()
     }, 1000);
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
+
   };
-
-    // Setup the loader
-
-
-    // // Set a timeout to clear loader, however you would actually call the $ionicLoading.hide(); method whenever everything is ready or loaded.
-    // $timeout(function () {
-    //   $ionicLoading.hide();
-    //   // $scope.stooges = [{name: 'Moe'}, {name: 'Larry'}, {name: 'Curly'}];
-    // }, 2000);
-
-  //
-  // // for the popups
-  // $scope.showPopup = function() {
-  //   $scope.data = {}
-  //
-  //   // An elaborate, custom popup
-  //   var myPopup = $ionicPopup.show({
-  //     template: '<input type="password" ng-model="data.wifi">',
-  //     title: 'Enter Wi-Fi Password',
-  //     subTitle: 'Please use normal things',
-  //     scope: $scope,
-  //     buttons: [
-  //       { text: 'Cancel' },
-  //       {
-  //         text: '<b>Save</b>',
-  //         type: 'button-positive',
-  //         onTap: function(e) {
-  //           if (!$scope.data.wifi) {
-  //             //don't allow the user to close unless he enters wifi password
-  //             e.preventDefault();
-  //           } else {
-  //             return $scope.data.wifi;
-  //           }
-  //         }
-  //       },
-  //     ]
-  //   });
-  //   myPopup.then(function(res) {
-  //     console.log('Tapped!', res);
-  //   });
-  //   $timeout(function() {
-  //      myPopup.close(); //close the popup after 3 seconds for some reason
-  //   }, 3000);
-  //  };
 
 }]);

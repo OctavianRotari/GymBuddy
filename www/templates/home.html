@@ -4,8 +4,12 @@
       <a class="item profile-item" href="#/app/profile">
         <img id='profile-img' src="{{data.image}}">
         <h1>Hello {{data.userName || data.firstName}}!</h1>
-        <p>Some more info brah</p>
-        <p >a bit more info brah</p>
+        <div id="info">
+          Status: <p id="online-status">Online</p><br>
+          Gym: <p>POtato++</p><br>
+          Last Trained: <p>Legs</p><br>
+          Last active: <p>21/6/14</p><br>
+        </div>
         <button class="button right ghost-button" href="#/app/profile">Edit profile</button>
       </a>
     </div>
