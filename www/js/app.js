@@ -3,7 +3,7 @@ var firebaseUrl = "https//luminous-torch-8195.firebaseio.com/";
 
 var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ionic.ion.showWhen', 'gymBuddy.services', 'gymBuddy.controllers'])
 
-.run(function($ionicPlatform, Auth, $rootScope, $ionicLoading, $location, $rootScope, $ionicHistory) {
+.run(function(profileData, $ionicPlatform, Auth, $rootScope, $ionicLoading, $location, $rootScope, $ionicHistory) {
   $ionicPlatform.ready(function() {
 
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -23,6 +23,9 @@ var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ion
 
     Auth.$onAuth(function (authData) {
       if (authData) {
+        profileData.getData().then(function(thing) {
+          $rootScope.data = thing;
+        });
         console.log("Logged in as:", authData.uid);
         $location.path('/app/home');
       } else {
