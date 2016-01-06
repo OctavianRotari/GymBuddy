@@ -8,35 +8,35 @@ angular.module('gymBuddy.services')
     firstName: 'Ben Sparrow',
     bio: 'WHAT A POTATO',
     lastText: 'Where u at bruv?????',
-    profileImageURL: 'img/ben.png',
+    image: 'img/ben.png',
     gym: 'somegym'
   }, {
     id: 1,
     firstName: 'Mario',
     bio: 'ba na na na nana na',
     lastText: 'Hey, it\'s a meee maaario',
-    profileImageURL: 'img/max.png',
+    image: 'img/max.png',
     gym: 'somegym2'
   }, {
     id: 2,
     firstName: 'MangoMan',
     bio: 'on na aha',
     lastText: 'Chattin shit bout ma mangos?',
-    profileImageURL: 'img/adam.jpg',
+    image: 'img/adam.jpg',
     gym: 'somegym3890'
   }, {
     id: 3,
     firstName: 'Don Perino',
     bio: 'sometime today',
     lastText: 'PENTAKILL!',
-    profileImageURL: 'img/perry.png',
+    image: 'img/perry.png',
     gym: 'somegym4'
   }, {
     id: 4,
     firstName: 'Mike Harrington',
     bio: 'chattin bout potatoes',
     lastText: 'my neck is wide, like a potato.',
-    profileImageURL: 'img/mike.png',
+    image: 'img/mike.png',
     gym: 'somegym980'
   }];
 

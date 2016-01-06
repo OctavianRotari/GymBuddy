@@ -6,13 +6,19 @@ angular.module('gymBuddy.controllers')
                                     "buddylist",
                                     "$location",
                                     "$ionicModal",
+                                    "$ionicPopup",
+                                    "$timeout",
+                                    "$ionicLoading",
                                     function($scope,
                                              $state,
                                              $firebaseObject,
                                              profileData,
                                              buddylist,
                                              $location,
-                                             $ionicModal) {
+                                             $ionicModal,
+                                             $ionicPopup,
+                                             $timeout,
+                                            $ionicLoading) {
 // $scope.buddy = BuddyList.all();
 
   var getData = function(){
@@ -39,15 +45,77 @@ angular.module('gymBuddy.controllers')
     $scope.modal.show();
   };
 
+  // $ionicLoading.show({
+  //   content: 'Loading',
+  //   animation: 'fade-in',
+  //   showBackdrop: true,
+  //   maxWidth: 200,
+  //   showDelay: 0
+  // });
 
   $scope.doFindBuddy = function() {
     console.log('GO BUDDY GO', $scope.buddyData);
-    $state.go('app.newbuddies')
+    $state.go('app.matches')
+    // $ionicLoading.show()
+    $ionicLoading.show({
+      content: 'Loading',
+      animation: 'fade-in',
+      showBackdrop: true,
+      maxWidth: 200,
+      showDelay: 0
+    });
+
+    $timeout(function() {
+      // $scope.closeLogin();
+      $ionicLoading.hide();
+      $scope.findBuddyClose()
+    }, 1000);
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
-    // $timeout(function() {
-    //   $scope.closeLogin();
-    // }, 1000);
   };
+
+    // Setup the loader
+
+
+    // // Set a timeout to clear loader, however you would actually call the $ionicLoading.hide(); method whenever everything is ready or loaded.
+    // $timeout(function () {
+    //   $ionicLoading.hide();
+    //   // $scope.stooges = [{name: 'Moe'}, {name: 'Larry'}, {name: 'Curly'}];
+    // }, 2000);
+
+  //
+  // // for the popups
+  // $scope.showPopup = function() {
+  //   $scope.data = {}
+  //
+  //   // An elaborate, custom popup
+  //   var myPopup = $ionicPopup.show({
+  //     template: '<input type="password" ng-model="data.wifi">',
+  //     title: 'Enter Wi-Fi Password',
+  //     subTitle: 'Please use normal things',
+  //     scope: $scope,
+  //     buttons: [
+  //       { text: 'Cancel' },
+  //       {
+  //         text: '<b>Save</b>',
+  //         type: 'button-positive',
+  //         onTap: function(e) {
+  //           if (!$scope.data.wifi) {
+  //             //don't allow the user to close unless he enters wifi password
+  //             e.preventDefault();
+  //           } else {
+  //             return $scope.data.wifi;
+  //           }
+  //         }
+  //       },
+  //     ]
+  //   });
+  //   myPopup.then(function(res) {
+  //     console.log('Tapped!', res);
+  //   });
+  //   $timeout(function() {
+  //      myPopup.close(); //close the popup after 3 seconds for some reason
+  //   }, 3000);
+  //  };
 
 }]);

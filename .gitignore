@@ -10,4 +10,5 @@ resources/
 node_modules/
 platforms/
 plugins/
+my-release-key.keystore
 *.DS_Store
