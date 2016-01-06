@@ -15,13 +15,16 @@ angular.module('gymBuddy.controllers')
                                              $ionicModal) {
 // $scope.buddy = BuddyList.all();
 
+
   var getData = function(){
+    var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
     profileData.getData().then(function(thing) {
       $scope.data = thing
     });
   };
 
   getData();
+
   $scope.buddy = buddylist.all();
   $scope.buddyData = {};
 
