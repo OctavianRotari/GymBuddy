@@ -1,9 +1,15 @@
-<<ion-view view-title="Buddies">
+<ion-view view-title="Buddies">
   <ion-content>
+    <div class="item">
+        <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Filter Buddies">
+      </label>
+    </div>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="buddy in buddies" type="item-text-wrap" href="#/app/buddylist/{{buddy.id}}">
         <img ng-src="{{buddy.image}}">
-        <h2>{{buddy.firstName}}</h2><h4 class="balanced">online</h4>
+        <h2>{{buddy.firstName}}</h2>
         <p>{{buddy.gym}}</p>
         <i class="icon ion-ios-person-outline"></i>
         <!-- <i class="icon ion-ios-arrow-left" style="margin-right:30px"></i> -->

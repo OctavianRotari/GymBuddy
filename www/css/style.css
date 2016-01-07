@@ -11,6 +11,34 @@
   color: white;
 }
 
+#match-info {
+  margin-left: 30px;
+  margin-top: 40px;
+  color: #3D3D3D;
+}
+
+#gym {
+  height: 90px;
+  float: right;
+}
+
+#match-info>p{
+  font-weight: bold;
+
+}
+
+#match-percent-profile {
+  display: inline-flex;
+  text-align: justify;
+  margin-left: 10px;
+  color: #1AFF00;
+}
+
+#match-title {
+  color: #3D3D3D;
+  display: inline-flex;
+}
+
 #match-percent {
   /*text-align:right;*/
   margin-top: 10px;
