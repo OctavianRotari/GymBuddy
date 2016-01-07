@@ -157,7 +157,7 @@ var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ion
     }
   })
   .state('app.chat', {
-    url: '/chatlist/:buddyId',
+    url: '/chatlist/:chatId',
     views: {
       'menuContent': {
         templateUrl: 'templates/chat.html',
