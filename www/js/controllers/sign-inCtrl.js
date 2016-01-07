@@ -79,7 +79,7 @@ angular.module('gymBuddy.controllers')
         var hasUser = snapshot.hasChild(authData.uid);
         if(hasUser === false){
           ref.child("users").child(authData.uid).set({
-            id: authData.facebook.id,
+            id: "facebook:" + authData.facebook.id,
             firstName: authData.facebook.cachedUserProfile.first_name,
             lastName: authData.facebook.cachedUserProfile.last_name,
             gender: authData.facebook.cachedUserProfile.gender,
@@ -100,7 +100,7 @@ angular.module('gymBuddy.controllers')
             var hasUser = snapshot.hasChild(authData.uid);
             if(hasUser === false){
               ref.child("users").child(authData.uid).set({
-                id: authData.facebook.id,
+                id:"facebook:" +  authData.facebook.id,
                 firstName: authData.facebook.cachedUserProfile.first_name,
                 lastName: authData.facebook.cachedUserProfile.last_name,
                 gender: authData.facebook.cachedUserProfile.gender,
