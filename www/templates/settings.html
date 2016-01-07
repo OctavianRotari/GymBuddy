@@ -2,5 +2,48 @@
 
   <ion-content>
     <h1>Settings</h1>
+    <ul class="list">
+
+    <li class="item item-toggle">
+       Setting
+       <label class="toggle toggle-dark">
+         <input type="checkbox">
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+       </label>
+    </li>
+    <li class="item item-toggle">
+       Setting2
+       <label class="toggle toggle-calm">
+         <input type="checkbox" checked>
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+       </label>
+    </li>
+    <div class="list">
+      <div class="item range range-positive">
+        <i class="icon ion-thermometer"></i>
+        <input type="range" name="volume" min="0" max="100" value="83">
+        <i class="icon ion-nuclear"></i>
+      </div>
+      <div class="item range ">
+        <i class="icon ion-volume-low"></i>
+        <input type="range" name="volume" min="0" max="100" value="83">
+        <i class="icon ion-volume-high"></i>
+      </div>
+    </div>
+    <li class="item item-toggle">
+      <i class="icon ion-steam"> Enable Steam</i>
+      <label class="toggle toggle-calm">
+        <input type="checkbox" checked>
+        <div class="track">
+          <div class="handle"></div>
+        </div>
+      </label>
+    </li>
+
+
   </ion-content>
 </ion-view>
