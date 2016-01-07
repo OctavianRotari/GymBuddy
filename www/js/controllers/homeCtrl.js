@@ -23,6 +23,8 @@ angular.module('gymBuddy.controllers')
                                              $rootScope) {
 
 
+var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+
   var getData = function(){
     var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
     profileData.getData().then(function(thing) {
@@ -32,6 +34,9 @@ angular.module('gymBuddy.controllers')
 
   getData();
 
+  var listOfUsers = $firebaseObject(ref);
+
+  listOfUsers.$bindTo($scope,"peeps");
   $scope.buddy = buddylist.all();
   $scope.buddyData = {};
 
@@ -50,14 +55,14 @@ angular.module('gymBuddy.controllers')
   };
   $scope.matchUser = function(){
     var match = []
-    var people = buddylist.all();
+    var people = listOfUsers;
     people.forEach(function(bud){
-      if(bud.gym == $rootScope.data.gym){
-        match.push(bud);
-      }
+      console.log(bud);
     });
-    console.log(match);
   }
+
+  $scope.saveMatches
+
 
   $scope.doFindBuddy = function() {
     $scope.matchUser();
