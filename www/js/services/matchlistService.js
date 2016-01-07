@@ -5,6 +5,17 @@ angular.module('gymBuddy.services')
   // Some fake testing data
   var matches = [{
     id: 0,
+    firstName: 'John Bloody Sparrow',
+    bio: 'sensual POTATO',
+    lastText: 'some bio',
+    image: 'img/ben.png',
+    gym: 'THE Gym',
+    age: 'N/A',
+    typeOfTraining: 'Dont care tbh',
+    percent: '98%'
+
+  }, {
+    id: 0,
     firstName: 'SARAH?',
     bio: 'sensual POTATO',
     lastText: 'Where u at bruv?????',
@@ -12,7 +23,7 @@ angular.module('gymBuddy.services')
     gym: '...',
     age: 'N/A',
     typeOfTraining: 'Terminating',
-    percent: '98%'
+    percent: '88%'
 
   }, {
     id: 2,
@@ -23,7 +34,7 @@ angular.module('gymBuddy.services')
     gym: 'YeeeahYeeeah',
     age: '21',
     typeOfTraining: 'Yeeeeaaaah',
-    percent: '78%'
+    percent: '83%'
   }, {
     id: 4,
     firstName: 'Dude',
