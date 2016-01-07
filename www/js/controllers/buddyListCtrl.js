@@ -20,11 +20,18 @@ angular.module('gymBuddy.controllers')
 
   $scope.chatRoom = function(uid){
     var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/");
-    var chatId = {};
+    var chat = undefined;
 
     chatData.getRoom(uid).then(function(thing){
-      chatId = thing;
-      debugger;
+      chat = thing;
+      console.log(thing);
+    }).then(function(){
+      if(chat === undefined){
+        ref.child("rooms").child(chatRoom).set({
+          user1: uid,
+          user2: ref.getAuth().uid
+        });
+      }
     });
 
     for(var i=0; i < $scope.data.chats.length; i++){
@@ -32,13 +39,6 @@ angular.module('gymBuddy.controllers')
         chatRoom = i;
       }
     };
-
-    if(chatId === {}){
-      ref.child("rooms").child(chatRoom).set({
-        user1: uid,
-        user2: ref.getAuth().uid
-      });
-    }
 
     $state.go("app.chat",{chatId: chatRoom});
   };

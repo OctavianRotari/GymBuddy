@@ -94,13 +94,10 @@ var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
     var user = ref.getAuth().uid;
     var refUser = new Firebase("https//luminous-torch-8195.firebaseio.com/users/" + user);
     refUser.child('chats').child("0").set({
-      userUid: "facebook:139926089709406",
+      userUid: "facebook:10156418118235331",
     });
     refUser.child('chats').child("1").set({
-      userUid: "facebook:10153151955407443"
-    });
-    refUser.child('chats').child("2").set({
-      userUid: "facebook:1679733605635243"
+      userUid: "facebook:10153151955407443",
     });
     $state.go("app.chatlist");
   };
