@@ -1,6 +1,6 @@
 <ion-view view-title="Home">
   <ion-content id="home-bg">
-    <div class="card">
+    <!-- <div class="card"> -->
       <a class="item profile-item" href="#/app/profile">
         <img id='profile-img' src="{{data.image}}">
         <h1>Hello {{data.userName || data.firstName}}!</h1>
@@ -12,22 +12,22 @@
         </div>
         <button class="button right ghost-button" href="#/app/profile">Edit profile</button>
       </a>
-    </div>
+    <!-- </div> -->
 
     <div class="row">
       <div class="col">
-        <a class="ghost-button button-large button-block" ng-click="chats()">CHATS</a>
+        <a class="login-button button-large button-block" ng-click="chats()">CHATS</a>
       </div>
       <div class="col">
-        <a class="ghost-button button-large button-block" href="#/app/buddylist">BUDDIES</a>
+        <a class="login-button button-large button-block" href="#/app/buddylist">BUDDIES</a>
       </div>
     </div>
-    <div class="row">
+    <div class="home-buttons-lower row">
       <div class="col">
-        <a class="ghost-button button-large button-block" href="#/app/gyms">GYMS</a>
+        <a class="login-button button-large button-block" href="#/app/gyms">GYMS</a>
       </div>
       <div class="col">
-          <a class="ghost-button button-large button-block" href="#/app/matches">MATCHES</a>
+          <a class="login-button button-large button-block" href="#/app/matches">MATCHES</a>
       </div>
     </div>
     <div class="row">

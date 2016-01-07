@@ -61,17 +61,17 @@ var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ion
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-  .state('sign-in', {
-    url: '/sign-in',
-    templateUrl: 'templates/sign-in.html',
-    controller: 'sign-inCtrl'
-  })
 
     .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
-    // controller: 'AppCtrl'
+    controller: 'appCtrl'
+  })
+  .state('sign-in', {
+    url: '/sign-in',
+    templateUrl: 'templates/sign-in.html',
+    controller: 'sign-inCtrl'
   })
 
   .state('app.settings', {

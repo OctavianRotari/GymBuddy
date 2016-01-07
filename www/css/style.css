@@ -1,41 +1,73 @@
-
 #sign-in-bg {
   background-image: url(gym_bg4.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.item-avatar,
-.item-icon-right {
-  /*background-color: rgba(255, 255, 255, 0.4);*/
+.login-items {
+  height: 40px;
 }
-.card {
-  background-color: transparent;
-  border: none
+.login-items>input {
+  color: white;
 }
 
-/*.modal {
-  top: 40px !important;
-  bottom: 0px !important;
-  left: 1.3% !important;
+#match-info {
+  margin-left: 30px;
+  margin-top: 40px;
+  color: #3D3D3D;
+}
 
-  margin: auto;
-  right: 0 !important;
-  width: 90% !important;
-  height: auto !important;
-}*/
+#gym {
+  height: 90px;
+  float: right;
+}
+
+#match-info>p{
+  font-weight: bold;
+
+}
+
+#match-percent-profile {
+  display: inline-flex;
+  text-align: justify;
+  margin-left: 10px;
+  color: #1AFF00;
+}
+
+#match-title {
+  color: #3D3D3D;
+  display: inline-flex;
+}
+
+#match-percent {
+  /*text-align:right;*/
+  margin-top: 10px;
+  float: right;
+  color: green;
+}
+
 #google-map {
   width: 350px !important;
   margin-left: 10px;
 }
 
-
 #online-status {
-  color: green;
+  color: #00FF51;
 }
+
+.home-buttons-lower {
+  position: relative;
+  bottom: 20px;
+}
+
 .profile-item {
   background-color: rgba(190, 190, 190, 0.6);
-  /*border: none;*/
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border:none;
 }
 .profile-item>img {
   margin-left: 10px;
@@ -45,43 +77,50 @@
 .profile-item>h1 {
   margin-left: 10px;
   margin-top: 30px;
-  color: #E8E8E8;
+  color: #F2F2F2;
 }
 .profile-item>div>p {
+  padding: 0px 0px 0px 2px;
   display:inline-flex;
-  color: #E3E3E3;
+  /*text-align: left;*/
+  color: #F2F2F2;
   font-style: italic;
   font-size: 16px;
+  font-weight: bold;
+}
+
+#matches-title {
+  margin-top: 10px;
+  color: #3D3D3D;
+  text-align: center;
 }
 
 .profile-item>button {
-position: absolute;
-top: 13px;
-margin-left:230px;
-color: grey;
-background-color: rgba(190, 190, 190, 0.6);
-padding: 10 0 10 0;
-font-size: 16px;
-font-weight: normal;
-border: none;
+  position: absolute;
+  top: 10px;
+  margin-left:240px;
+  color: #E3E3E3;
+  background-color: rgba(190, 190, 190, 0.6);
+  padding: 10 0 10 0;
+  font-size: 16px;
+  font-weight: normal;
+  border: none;
 }
 .profile-item>div {
-  /*white-space: nowrap;*/
-   /*display:inline-block;*/
   float:left;
-position: absolute;
-top: 82px;
-margin-left:150px;
-width: 180px;
-text-align: right;
-height: 80px;
-color: #8C8C8C;
-background-color: rgba(190, 190, 190, 0.4);
-padding: 10 0 10 0;
-font-size: 16px;
-font-weight: normal;
-border: none;
-text-align:
+  position: absolute;
+  top: 70px;
+  margin-left:160px;
+  width: 180px;
+  text-align: right;
+  height: 80px;
+  color: #E3E3E3;
+  font-weight: bolder;
+  background-color: rgba(190, 190, 190, 0.4);
+  padding: 10 0 10 0;
+  font-size: 18px;
+  border: none;
+  text-align: left;
 }
 
 .item {
@@ -93,8 +132,8 @@ text-align:
 }
 .item:hover,
 .item:active {
-  color: #66d8ed;
-  border-color: #66d8ed;
+  /*color: #66d8ed;*/
+  /*border-color: #66d8ed;*/
   /*transition: border-color 0.1s ease-in,
               color 0.1s ease-in;*/
 }
@@ -145,9 +184,7 @@ text-align:
               color 0.4s ease-in;
 }
 
-#login-section {
-  top:170px;
-}
+
 
 #profile-img {
   background-size:contain;
@@ -193,6 +230,68 @@ text-align:
   border-radius: 70%;
   margin: auto;
 }
+
+#login-section {
+  position:relative;;
+  margin-left: auto;
+  margin-right: auto;
+  top: 280px;
+  width: 340px;
+}
+
+
+
+.login-button {
+  background-color: rgba(255, 250, 255, 0.3);
+
+  /*rgba(255, 255, 255, 0.4)*/
+  /*display: inline-block;*/
+  /*width: auto;*/
+  height: 40px;
+  margin: 10px 0px 10px 0px;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  outline: none;
+  border:none;
+  text-decoration: none;
+  font-weight: bolder;
+  transition: border-color 1.4s ease-out,
+              color 0.2s ease-out;
+              background-color 1s ease-out;
+}
+.login-button:hover,
+.login-button:active {
+  background-color: rgba(250, 250, 250, 0.4);
+
+  color: white;
+  border: 1px solid rgba(255, 250, 255, 0.3);
+  transition: border-color 2s ease-in,
+              color .3s ease-in,
+              background-color .5s ease-in;
+}
+.facebook-button {
+  background-color: rgba(59, 89, 182, 0.3);
+  height: 40px;
+  color: white;
+  border: none;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  font-weight: bolder;
+  transition: border-color 3s ease-out,
+              color 0.2s ease-out;
+}
+.facebook-button:hover,
+.facebook-button:active {
+  background-color: rgba(59, 89, 182, 0.8);
+
+  /*color: #00C76A;*/
+  border: none;
+  transition: border-color 0.4s ease-in,
+              color 0.4s ease-in;
+}
+
 
 #buddy-title {
   padding-top: 10px;

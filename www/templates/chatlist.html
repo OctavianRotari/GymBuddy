@@ -6,11 +6,11 @@
         <input type="text" placeholder="Filter Chats">
       </label>
     </div>
-    <!-- <ion-list> -->
+    <ion-list>
       <ion-item class="ghost-chat item-avatar item-icon-right" ng-repeat="chat in buddies" href="#/app/chatlist/{{chat.id}}">
-      <!-- <ion-item class="ghost-chat item-avatar item-icon-right" ng-repeat="chat in buddies" href="#/app/chatlist/{{chat.id}}"> -->
         <img src="{{chat.image}}">
         <h2>{{chat.firstName}}</h2>
+        <h4 class="balanced">online</h4>
         <p>{{chat.lastText}}</p>
         <i class="icon ion-ios-arrow-forward icon-accessory"></i>
 
@@ -24,6 +24,6 @@
           <i class="icon ion-ios-person-outline"></i>
         </ion-option-button>
       </ion-item>
-    <!-- </ion-list> -->
+    </ion-list>
   </ion-content>
 </ion-view>

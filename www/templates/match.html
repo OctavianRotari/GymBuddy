@@ -1,16 +1,17 @@
 <ion-view view-title="match Profile">
   <ion-content>
-    <a class="profile-image">
-      <img ng-src="{{match.image}}" style="width: 164px; height: 164px">
-    </a >
-    <h1 id="match-title">{{match.firstName}}</h1>
-    <p class="match-text">Bio: {{match.bio}}</p>
-    <p class="match-text">Age: {{match.age}}</p>
-    <p class="match-text">Current gym: {{match.gym}}</p>
-    <p class="match-text">Training type: {{match.typeOfTraining}}</p>
-
+      <a class="profile-image">
+        <img ng-src="{{match.image}}" style="width: 164px; height: 164px">
+      </a >
+      <div id="match-info">
+        <h1 id="match-title">{{match.firstName}}</h1>
+        <h1 id="match-percent-profile">{{match.percent}}</h1>
+        <p class="match-text">Bio: {{match.bio}}</p>
+        <p class="match-text">Age: {{match.age}}</p>
+        <p class="match-text">Current gym: {{match.gym}}</p>
+        <p class="match-text">Training type: {{match.typeOfTraining}}</p>
+      </div>
     <div class="row">
-      <!-- <a class=" button-full" href="#/app/matchlist"> -->
 
       <div class="col">
         <a class="button button-full button-balanced" href="#/app/chatlist/{{match.id}}">
@@ -18,9 +19,6 @@
         </a>
       </div>
     </div>
-    <!-- <a class=" button-block" href="#/app/matchlist">
-      <i class="button button-block button-positive button-outline icon ion-person"></i>
-    </a> -->
 
     <div class="row">
       <div class="col">
