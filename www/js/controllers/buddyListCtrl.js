@@ -18,25 +18,22 @@ angular.module('gymBuddy.controllers')
 
   getDataChatList();
 
-  var refUser = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
-
-
-
   $scope.chatRoom = function(uid){
     var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/");
-    var chatId = null;
-    chatData.getRoom(uid, refUser).then(function(thing){
+    var chatId = {};
+
+    chatData.getRoom(uid).then(function(thing){
       chatId = thing;
+      debugger;
     });
 
     for(var i=0; i < $scope.data.chats.length; i++){
       if(uid === $scope.data.chats[i].userUid){
-        debugger;
         chatRoom = i;
       }
     };
 
-    if(chatId === null){
+    if(chatId === {}){
       ref.child("rooms").child(chatRoom).set({
         user1: uid,
         user2: ref.getAuth().uid

@@ -23,9 +23,9 @@
   <div class="bar bar-footer bar-stable" style="height:60px">
     <div class="item-input-inset" >
       <label class="item-input-wrapper">
-        <input type="text" placeholder="Message" style="width:280px">
+        <input type="text" placeholder="Message" style="width:280px" ng-model="message">
       </label>
-      <button class="button button-small" ng-click="">
+      <button class="button button-small" ng-click="sendMessage(message)">
         Send
       </button>
     </div>
