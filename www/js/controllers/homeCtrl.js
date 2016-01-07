@@ -36,6 +36,8 @@ var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
 
   var listOfUsers = $firebaseObject(ref);
 
+  $scope.peopleBuddy;
+
   listOfUsers.$bindTo($scope,"peeps");
   $scope.buddy = buddylist.all();
   $scope.buddyData = {};
@@ -57,8 +59,11 @@ var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
     var match = []
     var people = listOfUsers;
     people.forEach(function(bud){
-      console.log(bud);
+      if(bud.gym == $rootScope.data.gym){
+        match.push(bud);
+      }
     });
+    $scope.peopleBuddy = match;
   }
 
   $scope.saveMatches
