@@ -1,22 +1,18 @@
-<ion-view view-title="Chat with {{buddy.name}}">
+<ion-view view-title="Chat with Chuka">
 
   <ion-content class="padding">
 
     <!-- profile section  -->
       <p class="item-avatar item-icon-right">
-        <img ng-src="{{buddy.image}}" style="width: 84px; height: 84px;">
+        <img ng-src="img/chuka.jpg" style="width: 84px; height: 84px;">
       </p>
 
     <!-- chat section  -->
-    <p class=" item-list">
-      you:
-    </p>
-    <p class="item-list button-stable" style="text-align:right">
-      other:
-    </p>
-    <p class=" item-list">
-      you:
-    </p>
+    <ion-item ng-model="messages">
+      <li ng-repeat="message in messages">
+        <p>{{message.text}}</p>
+      </li>
+    </ion-item>
   </ion-content>
 
    <!-- this is for the footer search bar  -->
