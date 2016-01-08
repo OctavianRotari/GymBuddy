@@ -23,6 +23,8 @@ angular.module('gymBuddy.controllers')
                                              $rootScope) {
 
 
+var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+
   var getData = function(){
     var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
     profileData.getData().then(function(thing) {
@@ -32,6 +34,11 @@ angular.module('gymBuddy.controllers')
 
   getData();
 
+  var listOfUsers = $firebaseObject(ref);
+
+  $scope.peopleBuddy;
+
+  listOfUsers.$bindTo($scope,"peeps");
   $scope.buddy = buddylist.all();
   $scope.buddyData = {};
 
@@ -50,14 +57,17 @@ angular.module('gymBuddy.controllers')
   };
   $scope.matchUser = function(){
     var match = []
-    var people = buddylist.all();
+    var people = listOfUsers;
     people.forEach(function(bud){
       if(bud.gym == $rootScope.data.gym){
         match.push(bud);
       }
     });
-    console.log(match);
+    $scope.peopleBuddy = match;
   }
+
+  $scope.saveMatches
+
 
   $scope.doFindBuddy = function() {
     $scope.matchUser();
@@ -88,6 +98,9 @@ angular.module('gymBuddy.controllers')
     });
     refUser.child('chats').child("1").set({
       userUid: "facebook:10153151955407443"
+    });
+    refUser.child('chats').child("2").set({
+      userUid: "facebook:1679733605635243"
     });
     $state.go("app.chatlist");
   };
