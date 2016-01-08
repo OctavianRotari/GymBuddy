@@ -40,7 +40,8 @@ angular.module('gymBuddy.controllers')
           user1: uid,
           user2: ref.getAuth().uid
         });
-      }
+      };
+      $rootScope.chat = chat;
       $state.go("app.chat",{chatId: chatRoom});
     });
 
