@@ -1,19 +1,26 @@
 angular.module('gymBuddy.controllers')
 .controller('chatCtrl', function($scope, $stateParams, buddylist) {
 
+  var ref = new Firebase(firebaseUrl);
+
   var chatId;
+
+  var currentUser ;
 
 
   var messages = function(){
     chatId = $stateParams.chatId;
   };
 
-  $scope.sendMessage = function(msg){
-    var refChat = new Firebase("https//luminous-torch-8195.firebaseio.com/rooms/" + chatId);
+  $scope.sendMessage = function(msg, currentUser){
+    currentUser = ref.getAuth().uid;
+    var refChat = new Firebase(firebaseUrl +"rooms/" + chatId);
     var currentUser = refChat.getAuth().uid;
-    refChat.child("messages").push({
-      message: msg,
-    })
+    var obj = {};
+    obj[currentUser] = msg;
+    refChat.child("messages").set(obj)
+    debugger;
   }
+
   messages();
 })

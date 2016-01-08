@@ -1,5 +1,5 @@
 angular.module('gymBuddy.controllers')
-.controller('sign-inCtrl', function(Auth, $scope, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
+.controller('sign-inCtrl', function($state, Auth, $scope, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
 
   var ref = new Firebase(firebaseUrl);
 
@@ -29,10 +29,12 @@ angular.module('gymBuddy.controllers')
           });
         });
         $ionicLoading.hide();
+      }).then(function(){
+        $state.go("app.home")
       }).catch(function (error) {
-        alert("Authentication failed:" + error.message);
-        $ionicLoading.hide();
-      });
+          alert("Authentication failed:" + error.message);
+          $ionicLoading.hide();
+        });
     } else
       alert("Please enter email and password both");
   }
@@ -60,7 +62,10 @@ angular.module('gymBuddy.controllers')
 
         $scope.signIn(user)
 
-      }).catch(function (error) {
+      }).then(function(){
+        $state.go("app.home")
+      })
+      .catch(function (error) {
         alert("Error: " + error);
         $ionicLoading.hide();
         $scope.modal.hide();
@@ -92,6 +97,8 @@ angular.module('gymBuddy.controllers')
         }
       });
       $ionicLoading.hide();
+    }).then(function(){
+      $state.go("app.home")
     }).catch(function(error) {
       if (error.code === "TRANSPORT_UNAVAILABLE") {
         Auth.$authWithOAuthPopup("facebook").then(function(authData) {
@@ -118,6 +125,8 @@ angular.module('gymBuddy.controllers')
       } else {
         console.log(error);
       }
-    });
+    }).then(function(){
+      $state.go("app.home")
+    })
   };
 });

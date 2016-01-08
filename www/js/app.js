@@ -31,7 +31,6 @@ var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ion
         };
         getData();
         console.log("Logged in as:", authData.uid);
-        $location.path('/app/home');
       } else {
         console.log("Logged out");
         $ionicLoading.hide();
