@@ -5,46 +5,77 @@ angular.module('gymBuddy.services')
   // Some fake testing data
   var matches = [{
     id: 0,
-    firstName: 'John Bloody Sparrow',
-    bio: 'sensual POTATO',
+    firstName: 'Chuka',
+    bio: 'Eurogerian Lad',
     lastText: 'some bio',
-    image: 'img/ben.png',
-    gym: 'THE Gym',
-    age: 'N/A',
-    typeOfTraining: 'Dont care tbh',
+    image: 'img/chuka.jpg',
+    gym: 'GymBox London Soho',
+    age: '21',
+    typeOfTraining: 'Upper Body',
     percent: '98%'
 
   }, {
     id: 0,
-    firstName: 'SARAH?',
+    firstName: 'Denva93',
     bio: 'sensual POTATO',
     lastText: 'Where u at bruv?????',
-    image: 'img/8.jpg',
-    gym: '...',
+    image: 'img/ben.jpg',
+    gym: 'GymBox London Soho',
     age: 'N/A',
     typeOfTraining: 'Terminating',
     percent: '88%'
 
   }, {
     id: 2,
-    firstName: 'AndISaid',
+    firstName: 'Rob From Reading',
     bio: 'on na aha',
     lastText: 'matchtin shit bout ma mangos?',
-    image: 'img/1.jpg',
-    gym: 'YeeeahYeeeah',
+    image: 'img/9.jpg',
+    gym: 'GymBox London Soho',
     age: '21',
     typeOfTraining: 'Yeeeeaaaah',
     percent: '83%'
   }, {
     id: 4,
-    firstName: 'Dude',
+    firstName: 'The Dude',
     bio: 'matchtin bout potatoes',
     lastText: 'my neck is wide, like a potato.',
     image: 'img/7.jpg',
-    gym: 'do you have my rug?',
+    gym: 'GymBox London Old Street',
     age: '35',
     typeOfTraining: 'Bowling',
     percent: '72%'
+  }, {
+    id: 0,
+    firstName: 'Denva93',
+    bio: 'sensual POTATO',
+    lastText: 'Where u at bruv?????',
+    image: 'img/ben.jpg',
+    gym: 'GymBox London Old Street',
+    age: 'N/A',
+    typeOfTraining: 'Terminating',
+    percent: '64%'
+
+  }, {
+    id: 2,
+    firstName: 'AndISaid',
+    bio: 'on na aha',
+    lastText: 'matchtin shit bout ma mangos?',
+    image: 'img/adam.jpg',
+    gym: 'GymBox London Old Street',
+    age: '21',
+    typeOfTraining: 'Yeeeeaaaah',
+    percent: '62%'
+  }, {
+    id: 4,
+    firstName: 'Dude',
+    bio: 'matchtin bout potatoes',
+    lastText: 'my neck is wide, like a potato.',
+    image: 'img/mike.jpg',
+    gym: 'GymBox London Old Street',
+    age: '35',
+    typeOfTraining: 'Bowling',
+    percent: '61%'
   }];
 
 
