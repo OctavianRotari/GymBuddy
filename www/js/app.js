@@ -1,7 +1,6 @@
-
 var firebaseUrl = "https//luminous-torch-8195.firebaseio.com/";
 
-var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ionic.ion.showWhen', 'gymBuddy.services', 'gymBuddy.controllers'])
+var gymBuddy = angular.module('gymBuddy', ['ionic', 'ion-google-place', 'ngCordova' ,'firebase', 'ionic.ion.showWhen', 'gymBuddy.services', 'gymBuddy.controllers'])
 
 .run(function(profileData, $ionicPlatform, Auth, $rootScope, $ionicLoading, $location, $rootScope, $ionicHistory) {
   $ionicPlatform.ready(function() {
@@ -24,7 +23,6 @@ var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ion
     Auth.$onAuth(function (authData) {
       if (authData) {
         var getData = function(){
-          var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
           profileData.getData().then(function(thing) {
             $rootScope.data = thing
           });
@@ -50,8 +48,6 @@ var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ion
 
 
     $rootScope.$on("$stateChangeError", function (event, toState, toParams, fromState, fromParams, error) {
-      // We can catch the error thrown when the $requireAuth promise is rejected
-      // and redirect the user back to the home page
       if (error === "AUTH_REQUIRED") {
         $location.path("/sign-in");
       }
@@ -174,6 +170,4 @@ var gymBuddy = angular.module('gymBuddy', ['ionic','ngCordova' ,'firebase', 'ion
       }
     }
   });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/sign-in');
 });
