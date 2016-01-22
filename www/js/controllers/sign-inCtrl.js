@@ -97,13 +97,6 @@ angular.module('gymBuddy.controllers')
         }
       });
       $ionicLoading.hide();
-<<<<<<< b929e280122b98d4e6fa22531e2c3fa33755e964
-    }).then(function(){
-      $state.go("app.home")
-||||||| merged common ancestors
-=======
-      $location.path('/app/home');
->>>>>>> fixing bugs
     }).catch(function(error) {
       if (error.code === "TRANSPORT_UNAVAILABLE") {
         Auth.$authWithOAuthPopup("facebook").then(function(authData) {

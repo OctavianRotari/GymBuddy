@@ -27,7 +27,7 @@
 
       <label class="item item-input item-stacked-label">
         <span class="input-label">Preferred Gym</span>
-        <input type="text" placeholder="gym" value="{{data.gym}}" ng-model="data.gym">
+        <ion-google-place placeholder="Your address" ng-model="yourModel" location-changed="yourLocationChangeCallback"/>
       </label>
 
       <button class="button button-block button-stable" ng-click="editProfile()">Done</button>

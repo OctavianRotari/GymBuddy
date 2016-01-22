@@ -23,7 +23,7 @@ angular.module('gymBuddy.controllers')
                                              $rootScope) {
 
 
-var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+var ref = new Firebase(firebaseUrl + 'users' );
 
   var getData = function(){
     profileData.getData().then(function(thing) {
@@ -71,7 +71,6 @@ var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
   $scope.doFindBuddy = function() {
     $scope.matchUser();
     $state.go('app.matches')
-    // $ionicLoading.show()
     $ionicLoading.show({
       content: 'Loading',
       animation: 'fade-in',
@@ -81,7 +80,6 @@ var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
     });
 
     $timeout(function() {
-      // $scope.closeLogin();
       $ionicLoading.hide();
       $scope.findBuddyClose()
     }, 1000);
