@@ -1,5 +1,5 @@
 angular.module('gymBuddy.controllers')
-.controller('sign-inCtrl', function($location, Auth, $scope, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
+.controller('sign-inCtrl', function($state, $location, Auth, $scope, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
 
   var ref = new Firebase(firebaseUrl);
 
@@ -21,7 +21,6 @@ angular.module('gymBuddy.controllers')
         console.log("Logged in as:" + authData.uid);
         ref.child("users").child(authData.uid).once('value', function (snapshot) {
           var val = snapshot.val();
-          // To Update AngularJS $scope either use $apply or $timeout
           $scope.$apply(function () {
             $rootScope.displayName = val;
           });
