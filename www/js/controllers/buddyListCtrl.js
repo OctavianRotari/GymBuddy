@@ -31,7 +31,6 @@ angular.module('gymBuddy.controllers')
 
     for(var i=0; i < $scope.data.chats.length; i++){
       if(uid === $scope.data.chats[i].userUid){
-        debugger;
         chatRoom = i;
       }
     };

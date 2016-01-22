@@ -24,7 +24,6 @@ angular.module('gymBuddy.controllers')
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
-
     $timeout(function() {
       $scope.closeLogin();
     }, 1000);

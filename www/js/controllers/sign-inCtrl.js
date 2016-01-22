@@ -1,9 +1,7 @@
 angular.module('gymBuddy.controllers')
-.controller('sign-inCtrl', function(Auth, $scope, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
+.controller('sign-inCtrl', function($location, Auth, $scope, $firebaseAuth, $ionicModal, $ionicLoading, $rootScope) {
 
   var ref = new Firebase(firebaseUrl);
-
-  var check = 0;
 
   $ionicModal.fromTemplateUrl('templates/signup.html', {
     scope: $scope
@@ -74,7 +72,9 @@ angular.module('gymBuddy.controllers')
       template: 'Signing Up...'
     });
     Auth.$authWithOAuthPopup("facebook").then(function(authData) {
+
       var refUser = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+
       refUser.once("value", function(snapshot){
         var hasUser = snapshot.hasChild(authData.uid);
         if(hasUser === false){
@@ -92,6 +92,7 @@ angular.module('gymBuddy.controllers')
         }
       });
       $ionicLoading.hide();
+      $location.path('/app/home');
     }).catch(function(error) {
       if (error.code === "TRANSPORT_UNAVAILABLE") {
         Auth.$authWithOAuthPopup("facebook").then(function(authData) {
