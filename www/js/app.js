@@ -22,12 +22,6 @@ var gymBuddy = angular.module('gymBuddy', ['ionic', 'ion-google-place', 'ngCordo
 
     Auth.$onAuth(function (authData) {
       if (authData) {
-        var getData = function(){
-          profileData.getData().then(function(thing) {
-            $rootScope.data = thing
-          });
-        };
-        getData();
         console.log("Logged in as:", authData.uid);
       } else {
         console.log("Logged out");

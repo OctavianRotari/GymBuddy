@@ -124,6 +124,7 @@ angular.module('ion-google-place', [])
                 if (status == google.maps.GeocoderStatus.OK) {
                   scope.$apply(function(){
                     scope.locations = results;
+                    console.log(location);
                   });
                 } else {
                   // @TODO: Figure out what to do when the geocoding fails
