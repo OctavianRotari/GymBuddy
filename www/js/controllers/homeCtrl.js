@@ -26,7 +26,6 @@ angular.module('gymBuddy.controllers')
 var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
 
   var getData = function(){
-    var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
     profileData.getData().then(function(thing) {
       $scope.data = thing
     });
