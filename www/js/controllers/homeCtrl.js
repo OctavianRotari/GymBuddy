@@ -23,7 +23,8 @@ angular.module('gymBuddy.controllers')
                                              $rootScope) {
 
 
-var ref = new Firebase(firebaseUrl + 'users' );
+  var ref = new Firebase(firebaseUrl + 'users' );
+
 
   var getData = function(){
     profileData.getData().then(function(thing) {

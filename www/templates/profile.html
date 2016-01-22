@@ -11,11 +11,6 @@
       </label>
 
       <label class="item item-input item-stacked-label">
-        <span class="input-label">Email</span>
-        <input type="text" placeholder="bob@potato.com" value="{{data.email}}" >
-      </label>
-
-      <label class="item item-input item-stacked-label">
         <span class="input-label">Age</span>
         <input type="text" placeholder="9000" value="{{data.age}}" ng-model="data.age">
       </label>
@@ -27,7 +22,7 @@
 
       <label class="item item-input item-stacked-label">
         <span class="input-label">Preferred Gym</span>
-        <ion-google-place placeholder="Enter an address, Apt# and ZIP" value="{{data.gym}}"ng-model="data.location" current-location="true" />
+        <ion-google-place placeholder="Enter the adress of the gym" value="{{data.gym}}" ng-model="data.gym" current-location="true"/>
       </label>
 
       <button class="button button-block button-stable" ng-click="editProfile()">Done</button>

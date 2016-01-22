@@ -3,7 +3,13 @@ angular.module('gymBuddy.controllers')
 
   var ref = new Firebase(firebaseUrl);
 
-  $scope.data = $rootScope.data;
+  var getData = function(){
+    profileData.getData().then(function(thing) {
+      $scope.data = thing
+    });
+  };
+
+  getData();
 
   $scope.clearScope = function(){
     $ionicLoading.show({template:'Logging out....'});
@@ -20,14 +26,17 @@ angular.module('gymBuddy.controllers')
   $scope.editProfile = function(){
     var user = ref.getAuth().uid;
     var refUser = new Firebase(firebaseUrl + "users/" + user);
-    debugger;
-    refUser.update({
-      age: $scope.data.age,
-      userName: $scope.data.userName,
-      typeOfTraining: $scope.data.typeOfTraining,
-      gym: $scope.data.location.formatted_address
-    });
-    $state.go('app.home')
+    if($scope.data.age && $scope.data.userName && $scope.data.typeOfTraining && $scope.data.gym){
+      refUser.update({
+        age: $scope.data.age,
+        userName: $scope.data.userName,
+        typeOfTraining: $scope.data.typeOfTraining,
+        gym: $scope.data.gym.formatted_address
+      });
+      $state.go('app.home')
+    } else {
+      alert("Please fill in all your details ");
+    };
   };
 
 }])
