@@ -1,6 +1,7 @@
 angular.module('gymBuddy.controllers')
 .controller('profileCtrl',['$rootScope', '$timeout', '$ionicLoading', '$ionicHistory', '$localstorage', '$scope', '$state', 'profileData', function($rootScope, $timeout, $ionicLoading, $ionicHistory, $localstorage, $scope, $state, profileData){
 
+  var ref = new Firebase(firebaseUrl);
 
   $scope.data = $rootScope.data;
 
@@ -18,12 +19,13 @@ angular.module('gymBuddy.controllers')
 
   $scope.editProfile = function(){
     var user = ref.getAuth().uid;
-    var refUser = new Firebase("https//luminous-torch-8195.firebaseio.com/users/" + user);
+    var refUser = new Firebase(firebaseUrl + "users/" + user);
+    debugger;
     refUser.update({
       age: $scope.data.age,
       userName: $scope.data.userName,
       typeOfTraining: $scope.data.typeOfTraining,
-      gym: $scope.data.gym
+      gym: $scope.data.location.formatted_address
     });
     $state.go('app.home')
   };

@@ -11,7 +11,7 @@ angular.module('ion-google-place', [])
     return {
       require: '?ngModel',
       restrict: 'E',
-      template: '<input type="text" readonly="readonly" class="ion-google-place" autocomplete="off">',
+      template: '<input type="text" readonly="readonly" class="ion-google-place" autocomplete="on">',
       replace: true,
       scope: {
         ngModel: '=?',
@@ -96,11 +96,6 @@ angular.module('ion-google-place', [])
             })
             .catch(function(error){
               console.log('erreur catch',error);
-              //if(error.from == 'getLocation'){
-              //    getLocationError(error);
-              //} else {
-              //    //TODO when error from reverse geocode
-              //}
               var location = {
                 formatted_address: 'Error in getting current location'
               };
