@@ -3,6 +3,9 @@ angular.module('gymBuddy.controllers')
 
   var ref = new Firebase(firebaseUrl);
 
+  var user = ref.getAuth().uid;
+  var refUser = new Firebase(firebaseUrl + "users/" + user);
+
   var getData = function(){
     profileData.getData().then(function(thing) {
       $scope.data = thing
@@ -10,6 +13,7 @@ angular.module('gymBuddy.controllers')
   };
 
   getData();
+
 
   $scope.clearScope = function(){
     $ionicLoading.show({template:'Logging out....'});
@@ -24,8 +28,6 @@ angular.module('gymBuddy.controllers')
   };
 
   $scope.editProfile = function(){
-    var user = ref.getAuth().uid;
-    var refUser = new Firebase(firebaseUrl + "users/" + user);
     if($scope.data.age && $scope.data.userName && $scope.data.typeOfTraining && $scope.data.gym){
       refUser.update({
         age: $scope.data.age,

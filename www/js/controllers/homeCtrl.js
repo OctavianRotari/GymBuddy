@@ -24,7 +24,8 @@ angular.module('gymBuddy.controllers')
 
 
   var ref = new Firebase(firebaseUrl + 'users' );
-
+  var user = ref.getAuth().uid;
+  var refUser = new Firebase(firebaseUrl + "users/" + user);
 
   var getData = function(){
     profileData.getData().then(function(thing) {
@@ -33,6 +34,10 @@ angular.module('gymBuddy.controllers')
   };
 
   getData();
+
+  refUser.on('child_changed', function(childSnapshot, prevChildKey) {
+    getData();
+  });
 
   var listOfUsers = $firebaseObject(ref);
 

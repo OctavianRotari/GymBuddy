@@ -11,7 +11,6 @@ var gymBuddy = angular.module('gymBuddy', ['ionic', 'ion-google-place', 'ngCordo
 
     }
     if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
 
@@ -23,7 +22,7 @@ var gymBuddy = angular.module('gymBuddy', ['ionic', 'ion-google-place', 'ngCordo
     Auth.$onAuth(function (authData) {
       if (authData) {
         console.log("Logged in as:", authData.uid);
-        $location.path('/home');
+        $location.path('/app/home');
       } else {
         console.log("Logged out");
         $ionicLoading.hide();
@@ -52,7 +51,7 @@ var gymBuddy = angular.module('gymBuddy', ['ionic', 'ion-google-place', 'ngCordo
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
@@ -164,5 +163,4 @@ var gymBuddy = angular.module('gymBuddy', ['ionic', 'ion-google-place', 'ngCordo
       }
     }
   });
-  $urlRouterProvider.otherwise('/sign-in');
 });

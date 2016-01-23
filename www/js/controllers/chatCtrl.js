@@ -11,6 +11,7 @@ angular.module('gymBuddy.controllers')
   var chatId = function(){
     chatId = $stateParams.chatId;
   };
+
   chatId();
 
   var refChat = new Firebase(firebaseUrl +"rooms/" + chatId + "/messages");
