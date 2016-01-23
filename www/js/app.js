@@ -23,7 +23,7 @@ var gymBuddy = angular.module('gymBuddy', ['ionic', 'ion-google-place', 'ngCordo
     Auth.$onAuth(function (authData) {
       if (authData) {
         console.log("Logged in as:", authData.uid);
-        $state.go('app.home');
+        $location.path('/home');
       } else {
         console.log("Logged out");
         $ionicLoading.hide();
