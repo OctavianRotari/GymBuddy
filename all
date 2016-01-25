@@ -41,7 +41,7 @@ angular.module('gymBuddy.controllers')
         });
       };
       $rootScope.chat = chat;
-      $rootScope.chat.chaiId = chatRoom;
+      debugger;
       $state.go("app.chat",{chatId: chatRoom});
     });
   };

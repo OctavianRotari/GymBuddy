@@ -6,27 +6,19 @@ angular.module('gymBuddy.services')
   this.getRoom = function(otherUser, chatRoom){
     var currentUser = refRoom.getAuth().uid;
     var chat = false;
-
     return $q(function(resolve, reject) {
       refRoom.once('value', function(allSnapshots) {
         var snapshots = allSnapshots.val();
         if(snapshots === null ){
           resolve(undefined);
         } else {
-          var exists = 0;
-          for(var i=0; i < snapshots.length; i++) {
-            if(snapshots[i] === undefined){
-              exists = 0;
-            } else if (snapshots[i].room === chatRoom) {
-              exists++;
-            };
-          };
-          if ( exists === 0 ){
+          debugger;
+          if ( snapshots[chatRoom] === undefined){
             console.log("is not here");
             resolve(undefined);
           } else {
             for(var i=0; i < snapshots.length; i++) {
-              if (snapshots[i].user1 === otherUser && snapshots[i].user2 === currentUser){
+              if (snapshots[i].user2 === otherUser && snapshots[i].user1 === currentUser){
                 var snapshot = snapshots[i];
                 resolve(snapshot);
               }

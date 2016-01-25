@@ -5,16 +5,9 @@ angular.module('gymBuddy.controllers')
 
   var chatId;
 
-  var currentUser ;
+  var currentUser;
 
-
-  var chatId = function(){
-    chatId = $stateParams.chatId;
-  };
-
-  chatId();
-
-  var refChat = new Firebase(firebaseUrl +"rooms/" + chatId + "/messages");
+  var refChat = new Firebase(firebaseUrl +"rooms/" + $rootScope.chat.chatId + "/messages");
 
   $scope.messages = $firebaseArray(refChat);
 
@@ -23,6 +16,7 @@ angular.module('gymBuddy.controllers')
     currentUser = ref.getAuth().uid;
     var currentUser = refChat.getAuth().uid;
     var obj = {};
+    debugger;
     $scope.messages.$add({
       user: currentUser,
       text: msg

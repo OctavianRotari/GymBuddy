@@ -19,6 +19,7 @@ angular.module('gymBuddy.controllers')
     $ionicLoading.show({template:'Logging out....'});
     $localstorage.set('loggin_state', '');
     $timeout(function () {
+      $scope.data = null;
       $ionicLoading.hide();
       $ionicHistory.clearCache();
       $ionicHistory.clearHistory();

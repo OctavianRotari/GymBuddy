@@ -52,7 +52,8 @@ angular.module('gymBuddy.controllers')
         ref.child("users").child(authData.uid).set({
           userName: user.userName,
           email:  user.email,
-          image: null
+          image: null,
+          id: authData.uid
         });
         $ionicLoading.hide();
         $scope.modal.hide();
