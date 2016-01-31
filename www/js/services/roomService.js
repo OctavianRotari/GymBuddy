@@ -5,14 +5,13 @@ angular.module('gymBuddy.services')
 
   this.getRoom = function(otherUser, chatRoom){
     var currentUser = refRoom.getAuth().uid;
-    var chat = false;
     return $q(function(resolve, reject) {
       refRoom.once('value', function(allSnapshots) {
         var snapshots = allSnapshots.val();
+        console.log(snapshots);
         if(snapshots === null ){
           resolve(undefined);
         } else {
-          debugger;
           if ( snapshots[chatRoom] === undefined){
             console.log("is not here");
             resolve(undefined);
@@ -25,7 +24,7 @@ angular.module('gymBuddy.services')
             }
           }
         }
-      })
-    })
+      });
+    });
   }
-}])
+}]);

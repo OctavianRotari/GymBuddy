@@ -34,6 +34,7 @@ angular.module('gymBuddy.controllers')
       console.log(thing);
     }).then(function(){
       if(chat === undefined){
+        var chatInfo = {};
         ref.child("rooms").child(chatRoom).set({
           room: chatRoom,
           user1: uid,

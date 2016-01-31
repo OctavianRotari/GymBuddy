@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Tue Jan 05 2016 18:34:39 GMT+0000 (GMT)
+// Generated on Sat Jan 30 2016 21:43:42 GMT+0100 (CET)
 
 module.exports = function(config) {
   config.set({
@@ -15,16 +15,22 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      '../www/lib/angular/angular.js',
-      '../www/lib/mockfirebase/browser/mockfirebase.js',
-      '../www/js/*.js',
-      '../www/lib/angular-mocks/angular-mocks.js',
-      '../tests/**/*.spec.js'
+      'www/lib/angular/angular.js',
+      'www/lib/angular-route/angular-route.js',
+      'www/lib/angular-resource/angular-resource.js',
+      'www/lib/angular-mocks/angular-mocks.js',
+      'www/js/controllers/gymBuddyControllers.js',
+      'www/js/controllers/*.js',
+      'www/js/services/gymBuddyServices.js',
+      'www/js/services/*.js',
+      'www/js/directive/*.js',
+      'www/js/app.js',
+      'test/spec/*.spec.js'
     ],
 
-
     // list of files to exclude
-    exclude: [],
+    exclude: [
+    ],
 
 
     // preprocess matching files before serving them to the browser
@@ -67,5 +73,6 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
+    //concurrency: Infinity
   })
 }

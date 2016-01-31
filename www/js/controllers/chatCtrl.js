@@ -16,7 +16,6 @@ angular.module('gymBuddy.controllers')
     currentUser = ref.getAuth().uid;
     var currentUser = refChat.getAuth().uid;
     var obj = {};
-    debugger;
     $scope.messages.$add({
       user: currentUser,
       text: msg
