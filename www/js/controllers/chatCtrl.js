@@ -2,19 +2,9 @@ angular.module('gymBuddy.controllers')
 .controller('chatCtrl', function($firebaseArray, chatData, $rootScope, $scope, $stateParams, buddylist) {
 
   var ref = new Firebase(firebaseUrl);
-
   var chatId;
-
-  var currentUser ;
-
-
-  var chatId = function(){
-    chatId = $stateParams.chatId;
-  };
-
-  chatId();
-
-  var refChat = new Firebase(firebaseUrl +"rooms/" + chatId + "/messages");
+  var currentUser;
+  var refChat = new Firebase(firebaseUrl +"rooms/" + $rootScope.chat.chatId + "/messages");
 
   $scope.messages = $firebaseArray(refChat);
 
@@ -34,4 +24,4 @@ angular.module('gymBuddy.controllers')
     });
   };
 
-})
+});

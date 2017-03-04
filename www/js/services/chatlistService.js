@@ -1,7 +1,7 @@
 angular.module('gymBuddy.services')
 .service('chatList', ["$q", function($q){
 
-  var ref = new Firebase("https//luminous-torch-8195.firebaseio.com/users");
+  var ref = new Firebase(firebaseUrl + "users");
 
 
   this.getData = function(userUid){

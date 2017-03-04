@@ -60,6 +60,7 @@ angular.module('gymBuddy.controllers')
   $scope.findBuddy = function() {
     $scope.modal.show();
   };
+
   $scope.matchUser = function(){
     var match = []
     var people = listOfUsers;
